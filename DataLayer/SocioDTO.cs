@@ -13,13 +13,15 @@ namespace DataLayer
     {
         
         [Key]        
-        public int dni { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public DateTime fechaNac { get; set; }
-        public string domicilio { get; set; }
-        public int telefono { get; set; }
-        public string mail { get; set; }
+        public int dni { get; set;}
+        public string nombre { get; set;}
+        public string apellido { get; set;}
+        public DateTime fechaNac { get; set;}
+        public string domicilio { get; set;}
+        public int telefono { get; set;}
+        public string mail { get; set;}
+        public List<CuotaDTO> Cuotas {get; set;}
+        public List<RutinaDTO> Rutinas { get; set;}
 
        // public bool 
     }

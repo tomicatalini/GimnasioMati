@@ -14,6 +14,6 @@ namespace DataLayer
         public int cantidad { get; set; }
         public string descripcion { get; set; }
         public float precioUnitario { get; set; }
-        public DateTime fecha { get; set; 
+        public DateTime fecha { get; set; }
     }
 }

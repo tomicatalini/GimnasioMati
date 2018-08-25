@@ -15,7 +15,7 @@ namespace DataLayer
         public int dia { get; set; }
         public string descanso { get; set; }
         public int seriesxRepeticion { get; set; }
-        public Musculo musculo { get; set; }
+        public MusculoDTO musculo { get; set; }
 
     }
 }

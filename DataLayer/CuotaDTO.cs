@@ -17,6 +17,6 @@ namespace DataLayer
         public bool pagada { get; set; }
         public MesDTO mes { get; set; }
         public int año { get; set; }
-        public List<Pago> Pagos { get; set; }
+        public List<PagoDTO> Pagos { get; set; }
     }
 }

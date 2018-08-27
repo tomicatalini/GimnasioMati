@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 
 
 namespace DataLayer
 {
     public class FichaMedicaDTO
     {
-        [Key]
+        //Properties navigation
         public int id { get; set; }
         public int peso { get; set; }
         public int altura { get; set; }
@@ -21,11 +16,15 @@ namespace DataLayer
         public bool afecResp { get; set; }
         public bool fuma { get; set; }
         public bool alcohol { get; set; }
-        public List<ContactoEmergenciaDTO> ContactoEmergencia { get; set; }
-        public List<MedicacionDTO> Medicaciones { get; set; }
-        public List<EnfermedadDTO> Enfermedades { get; set; }
-        public List<ActividadFisicaDTO> ActividadesFisicas { get; set; }
-        public List<OperacionDTO> Operaciones { get; set; }
-        public List<LimitacionFisicaDTO> LimitacionesFisicas { get; set; }
+
+        //Relationship Navigation
+        public virtual SocioDTO socio { get; set; }
+
+        public virtual IList<ContactoEmergenciaDTO> ContactoEmergencia { get; set; }
+        public virtual IList<MedicacionDTO> Medicaciones { get; set; }
+        public virtual IList<EnfermedadDTO> Enfermedades { get; set; }
+        public virtual IList<ActividadFisicaDTO> ActividadesFisicas { get; set; }
+        public virtual IList<OperacionDTO> Operaciones { get; set; }
+        public virtual IList<LimitacionFisicaDTO> LimitacionesFisicas { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 
 
 namespace DataLayer
@@ -6,7 +7,7 @@ namespace DataLayer
     public class FichaMedicaDTO
     {
         //Properties navigation
-        public int id { get; set; }
+        public DateTime fechaEntrega { get; set; }
         public int peso { get; set; }
         public int altura { get; set; }
         public string grupoSanguineo { get; set; }

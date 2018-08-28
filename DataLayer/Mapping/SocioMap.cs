@@ -17,24 +17,34 @@ namespace DataLayer.Mapping
                     .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None)
                     .IsRequired();
 
-            //Campo nombre es NOT NULL, con una longitud maxima de 40 caracteres.
+            //conf. propiedad nombre: nombre, not null y longitud maxima de 40 caracteres
             this.Property(unSocio => unSocio.nombre)
                     .IsRequired()
                     .HasMaxLength(40);
 
-            //Campo apellido es NOT NULL, con una longitud maxima de 40 caracteres.
+            //conf. propiedad apellido: nombre, not null y longitud maxima de 40 caracteres
             this.Property(unSocio => unSocio.apellido)
                     .IsRequired()
                     .HasMaxLength(40);
 
-            //Campo fecha de nacimiento es NOT NULL
+            //conf. propiedad fecha nacimiento: nombre y not null
             this.Property(unSocio => unSocio.fechaNac)
                     .IsRequired();
 
-            //Campo telefono es NOT NULL
+            //conf. propiedad telefono: nombre y not null
             this.Property(unSocio => unSocio.telefono)
                     .IsRequired();
 
+            //conf. propiedad domicilio: nombre y nullable
+            this.Property(unSocio => unSocio.domicilio)
+                    .HasColumnName("domicilio")
+                    .IsOptional();
+
+            //conf. propiedad mail: nombre y nulleable
+            this.Property(unSocio => unSocio.mail)
+                   .HasColumnName("mail")
+                   .IsOptional();
+            
             //Relacion de uno a muchos entre socio y cuotas
             this.HasMany(unSocio => unSocio.Cuotas)
                 .WithRequired(unaCuota => unaCuota.socio)

@@ -12,6 +12,8 @@ namespace DataLayer
         [Key]
         public int id { get; set; }
         public string nombre { get; set; }
+
+        public virtual IList<DetalleRutinaDTO> DetallesDeRutina { get; set; }
         public List<EjercicioDTO> Ejercicios { get; set; }
     }
 }

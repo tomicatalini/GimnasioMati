@@ -62,7 +62,10 @@
     <Compile Include="LimitacionFisicaDTO.cs" />
     <Compile Include="LineaMovimientoDTO.cs" />
     <Compile Include="Mapping\CuotaMap.cs" />
+    <Compile Include="Mapping\DetalleRutinaMap.cs" />
+    <Compile Include="Mapping\FichaMedicaMap.cs" />
     <Compile Include="Mapping\PagoMap.cs" />
+    <Compile Include="Mapping\RutinaMap.cs" />
     <Compile Include="Mapping\SocioMap.cs" />
     <Compile Include="MedicacionDTO.cs" />
     <Compile Include="MesDTO.cs" />

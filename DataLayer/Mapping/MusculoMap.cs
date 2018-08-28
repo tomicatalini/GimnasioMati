@@ -23,13 +23,15 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //relacion de muchos a uno con detalle rutina
+            /*
             this.HasMany(unMusculo => unMusculo.DetallesDeRutina)
                 .WithRequired(unDetalle => unDetalle.Musculo)
                     .Map(pMap => pMap.MapKey("detalleRutina"));
+                    */
 
             //relacion de muchos a uno con ejercicio
             this.HasMany(unMusculo => unMusculo.Ejercicios)
-                .WithRequired(unEjercicio => unEjercicio.musculo)
+                .WithRequired(unEjercicio => unEjercicio.Musculo)
                     .Map(pMap => pMap.MapKey("ejercicio"));
 
         }

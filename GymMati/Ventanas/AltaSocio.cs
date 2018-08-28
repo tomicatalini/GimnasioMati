@@ -45,7 +45,7 @@ namespace GymMati.Ventanas
                     Controlador controlador = new Controlador(dbMati);
 
                     //Se hace el alta socio
-                    controlador.altaSocio((int)Convert.ToInt32(tbDni.Text), tbNombre.Text, tbApellido.Text, dtFechaNac.Value, tbDom.Text, Convert.ToInt32(tbTel.Text), tbMail.Text);
+                    controlador.altaSocio(Convert.ToInt64(tbDni.Text), tbNombre.Text, tbApellido.Text, dtFechaNac.Value, tbDom.Text, Convert.ToInt32(tbTel.Text), tbMail.Text);
 
                     //Commit en Base de Datos
                     controlador.guardarCambios();

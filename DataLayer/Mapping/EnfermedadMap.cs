@@ -23,9 +23,11 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //relacion de uno a muchos con ficha medica
+            /*
             this.HasRequired(unaEnfermedad => unaEnfermedad.FichaMedica)
                 .WithMany(unaFicha => unaFicha.Enfermedades)
                     .Map(pMap => pMap.MapKey("fichaMedica"));
+                    */
 
         }
     }

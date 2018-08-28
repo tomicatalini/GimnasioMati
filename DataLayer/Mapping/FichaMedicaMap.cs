@@ -65,38 +65,40 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //relacion de uno a uno con socio
+            /*
             this.HasRequired<SocioDTO>(unaFicha => unaFicha.Socio)
                 .WithMany(unSocio => unSocio.HistorialMedico)
                     .Map(pMap => pMap.MapKey("fichaMedica"));
+                    */
 
             //relacion de uno a muchos con contacto de emergencia
             this.HasMany<ContactoEmergenciaDTO>(unaFicha => unaFicha.ContactoEmergencia)
-                .WithOptional(unContacto => unContacto.fichaMedica)
+                .WithOptional(unContacto => unContacto.FichaMedica)
                     .Map(pMap => pMap.MapKey("contactoEmergencia"));
 
             //relacion de uno a muchos con Medicacion
             this.HasMany<MedicacionDTO>(unMed => unMed.Medicaciones)
-                .WithOptional(unContacto => unContacto.fichaMedica)
+                .WithOptional(unContacto => unContacto.FichaMedica)
                     .Map(pMap => pMap.MapKey("medicacion"));
 
-            //relacion de uno a muchos con Medicacion
+            //relacion de uno a muchos con nfermedad
             this.HasMany<EnfermedadDTO>(unaEnf => unaEnf.Enfermedades)
-                .WithOptional(unContacto => unContacto.fichaMedica)
+                .WithOptional(unContacto => unContacto.FichaMedica)
                     .Map(pMap => pMap.MapKey("medicacion"));
 
-            //relacion de uno a muchos con Medicacion
+            //relacion de uno a muchos con actividad fisica
             this.HasMany<ActividadFisicaDTO>(unaAct => unaAct.ActividadesFisicas)
-                .WithOptional(unContacto => unContacto.fichaMedica)
+                .WithOptional(unContacto => unContacto.FichaMedica)
                     .Map(pMap => pMap.MapKey("actividadFisica"));
 
-            //relacion de uno a muchos con Medicacion
+            //relacion de uno a muchos con operacion
             this.HasMany<OperacionDTO>(unaOp => unaOp.Operaciones)
-                .WithOptional(unContacto => unContacto.fichaMedica)
+                .WithOptional(unContacto => unContacto.FichaMedica)
                     .Map(pMap => pMap.MapKey("operacion"));
 
-            //relacion de uno a muchos con Medicacion
+            //relacion de uno a muchos con limitacion fisica
             this.HasMany<LimitacionFisicaDTO>(unaLim => unaLim.LimitacionesFisicas)
-                .WithOptional(unContacto => unContacto.fichaMedica)
+                .WithOptional(unContacto => unContacto.FichaMedica)
                     .Map(pMap => pMap.MapKey("limitacionFisica"));
         }
     }

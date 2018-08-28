@@ -44,13 +44,13 @@ namespace GymMati.Ventanas
                     {
                         SocioDTO unSocio = controlador.buscarSocio(Convert.ToInt32(this.tbBuscar.Text));
 
-                        this.tbDni.Text = unSocio.dni.ToString();
-                        this.tbNombre.Text = unSocio.nombre;
-                        this.tbApellido.Text = unSocio.apellido;
-                        this.tbDom.Text = unSocio.domicilio;
-                        this.tbTel.Text = unSocio.telefono.ToString();
-                        this.dtFechaNac.Value = unSocio.fechaNac;
-                        this.tbMail.Text = unSocio.mail;
+                        this.tbDni.Text = unSocio.DNI.ToString();
+                        this.tbNombre.Text = unSocio.Nombre;
+                        this.tbApellido.Text = unSocio.Apellido;
+                        this.tbDom.Text = unSocio.Domicilio;
+                        this.tbTel.Text = unSocio.Telefono.ToString();
+                        this.dtFechaNac.Value = unSocio.FechaNac;
+                        this.tbMail.Text = unSocio.Mail;
                     }
                 }
             }

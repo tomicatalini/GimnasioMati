@@ -12,7 +12,7 @@ namespace DataLayer.Mapping
             //conf. clave primaria: nombre, auto increment y not null
             this.HasKey(unPago => unPago.NroPago)
                 .Property(unPago => unPago.NroPago)
-                    .HasColumnName("nroPago")
+                    .HasColumnName("pagoId")
                     .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)
                     .IsRequired();
 
@@ -27,9 +27,11 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //relacion de uno a uno con cuota
+            /*
             this.HasRequired<CuotaDTO>(unPago => unPago.Cuota)
                 .WithMany(unaCuota => unaCuota.Pagos)
                     .Map(pMap => pMap.MapKey("cuota"));
+                    */
         }
     }
 }

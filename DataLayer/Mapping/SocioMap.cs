@@ -47,7 +47,7 @@ namespace DataLayer.Mapping
             
             //Relacion de uno a muchos entre socio y cuotas
             this.HasMany(unSocio => unSocio.Cuotas)
-                .WithRequired(unaCuota => unaCuota.Socio)
+                .WithOptional(unaCuota => unaCuota.Socio)
                     .Map(pMapping => pMapping.MapKey("socio"));
 
             //Relacion de muchos a muchos entre socio y rutinas. Se hace una tabla intermedia llamada "socioRutina" con las columas RuntinaID y SocioDNI

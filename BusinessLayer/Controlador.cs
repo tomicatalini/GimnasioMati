@@ -27,7 +27,7 @@ namespace BusinessLayer
         public SocioDTO buscarSocio(int dni)
         {
             //Busca un socio dentro del DbSet con coincidencia en dni
-            SocioDTO socioBuscado = this.dbMati.Socios.Where(s => s.dni == dni).Single();
+            SocioDTO socioBuscado = this.dbMati.Socios.Where(s => s.DNI == dni).Single();
 
             return socioBuscado;
 
@@ -35,7 +35,7 @@ namespace BusinessLayer
 
         public bool existeSocio(int dni)
         {
-            if (this.dbMati.Socios.Where(s => s.dni == dni).Any())
+            if (this.dbMati.Socios.Where(s => s.DNI == dni).Any())
             {
                 return true;
             }
@@ -45,18 +45,18 @@ namespace BusinessLayer
             }
         }
 
-        public void altaSocio(int dni, string nombre, string apellido, DateTime fechaNac, string domicilio, int telefono, string mail)
+        public void altaSocio(long dni, string nombre, string apellido, DateTime fechaNac, string domicilio, int telefono, string mail)
         {
             
             SocioDTO unSocio = new SocioDTO()
             {
-                dni = dni,
-                nombre = nombre,
-                apellido = apellido,
-                fechaNac = fechaNac,
-                domicilio = domicilio,
-                telefono = telefono,
-                mail = mail
+                DNI = dni,
+                Nombre = nombre,
+                Apellido = apellido,
+                FechaNac = fechaNac,
+                Domicilio = domicilio,
+                Telefono = telefono,
+                Mail = mail
             };
                        
              //Agrega el nuevo socio al DbSet

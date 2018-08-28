@@ -34,15 +34,17 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //relacion de muchos a muchos con socio
+            /*
             this.HasMany(unaRutina => unaRutina.Socios)
                 .WithMany(unSocio => unSocio.Rutinas)
-                    .Map(pMap => pMap.MapLeftKey("rutina")
+                    .Map(pMap => pMap.MapLeftKey("Rutina")
                                      .MapRightKey("socio"));
+                                     */
 
             //relacion de uno a muchos con detalle rutina
             this.HasMany(unaRutina => unaRutina.DetalleRutinas)
                 .WithRequired(unDetalle => unDetalle.Rutina)
-                    .Map(pMap => pMap.MapKey("rutina"));
+                    .Map(pMap => pMap.MapKey("Rutina"));
         }
     }
 }

@@ -32,14 +32,16 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //relacion de uno a muchas con rutina
+            /*
             this.HasRequired(unDetalle => unDetalle.Rutina)
-                .WithMany(unaRutina => unaRutina.DetalleRutinas)
-                    .Map(pMap => pMap.MapKey("rutina"));
+                .WithMany(unaRutina => unaRutina.DetalleRutinas);
+                    //.Map(pMap => pMap.MapKey("Rutina"));
+                    */
 
             //relacion de uno a muchas con musculo
             this.HasRequired(unMusculo => unMusculo.Musculo)
                 .WithMany(unDetalle => unDetalle.DetallesDeRutina)
-                    .Map(pMap => pMap.MapKey("rutina"));
+                    .Map(pMap => pMap.MapKey("detalleRutina"));
         }
     }
 }

@@ -33,9 +33,11 @@ namespace DataLayer.Mapping
                     .IsOptional();
 
             //relacion de uno a muchos con ficha medica
+            /*
             this.HasRequired(unaLimitacion => unaLimitacion.FichaMedica)
                 .WithMany(unaFicha => unaFicha.LimitacionesFisicas)
                     .Map(pMap => pMap.MapKey("fichaMedica"));
+                    */
 
         }
     }

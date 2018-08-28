@@ -28,9 +28,11 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //relacion de uno a muchos con movimiento
+            /*
             this.HasRequired(unaLinea => unaLinea.Movimiento)
                 .WithMany(unMovimiento => unMovimiento.LineaMovimientos)
                     .Map(pMap => pMap.MapKey("lineaMovimiento"));
+                    */
 
             //relacion de uno a mucho con producto
             this.HasRequired(unaLinea => unaLinea.Producto)

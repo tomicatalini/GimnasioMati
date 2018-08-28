@@ -48,13 +48,15 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //relacion uno a uno entre con socio.
+            /*
             this.HasRequired<SocioDTO>(unaCuota => unaCuota.Socio)
                 .WithMany(unSocio => unSocio.Cuotas)
                 .Map(pMap => pMap.MapKey("socio"));
+                */
 
             //relacion de uno a muchos entre cuota y pago
             this.HasMany<PagoDTO>(unaCuota => unaCuota.Pagos)
-                .WithRequired(unPago => unPago.Cuota)
+                .WithOptional(unPago => unPago.Cuota)
                     .Map(pMap => pMap.MapKey("nroPago"));
 
 

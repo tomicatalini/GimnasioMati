@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 
 namespace DataLayer
 {
     public class MusculoDTO
     {
-        [Key]
-        public int id { get; set; }
-        public string nombre { get; set; }
+        //Properties navigation
+        public int Id { get; set; }
+        public string Nombre { get; set; }
 
+        //Relationship navigation
         public virtual IList<DetalleRutinaDTO> DetallesDeRutina { get; set; }
-        public List<EjercicioDTO> Ejercicios { get; set; }
+        public virtual IList<EjercicioDTO> Ejercicios { get; set; }
     }
 }

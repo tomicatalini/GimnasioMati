@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 
 namespace DataLayer
 {
     public class TipoProductoDTO
     {
-        [Key]
-        public int id { get; set; }
-        public string nombre { get; set; }
-        public List<ProductoDTO> Productos { get; set; }
+        //Properties navigation
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+
+        //Relationship navigation
+        public IList<ProductoDTO> Productos { get; set; }
     }
 }

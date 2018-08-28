@@ -7,19 +7,19 @@ namespace DataLayer
     public class FichaMedicaDTO
     {
         //Properties navigation
-        public DateTime fechaEntrega { get; set; }
-        public int peso { get; set; }
-        public int altura { get; set; }
-        public string grupoSanguineo { get; set; }
-        public bool hiperArterial { get; set; }
-        public bool diabetes { get; set; }
-        public bool afecCardVascular { get; set; }
-        public bool afecResp { get; set; }
-        public bool fuma { get; set; }
-        public bool alcohol { get; set; }
+        public DateTime FechaEntrega { get; set; }
+        public int Peso { get; set; }
+        public int Altura { get; set; }
+        public string GrupoSanguineo { get; set; }
+        public bool HiperArterial { get; set; }
+        public bool Diabetes { get; set; }
+        public bool AfecCardVascular { get; set; }
+        public bool AfecResp { get; set; }
+        public bool Fuma { get; set; }
+        public bool Alcohol { get; set; }
 
         //Relationship Navigation
-        public virtual SocioDTO socio { get; set; }
+        public virtual SocioDTO Socio { get; set; }
 
         public virtual IList<ContactoEmergenciaDTO> ContactoEmergencia { get; set; }
         public virtual IList<MedicacionDTO> Medicaciones { get; set; }

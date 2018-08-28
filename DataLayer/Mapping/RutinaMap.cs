@@ -12,24 +12,24 @@ namespace DataLayer.Mapping
             this.ToTable("Rutina");
 
             //conf. clave primaria: nombre, autoincrement y not null
-            this.HasKey<int>(unaRutina => unaRutina.id)
-                .Property(unaRutina => unaRutina.id)
+            this.HasKey<int>(unaRutina => unaRutina.Id)
+                .Property(unaRutina => unaRutina.Id)
                     .HasColumnName("nroRutina")
                     .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                     .IsRequired();
 
             //conf. propiedad nombre: nombre y not null
-            this.Property(unaRutina => unaRutina.nombre)
+            this.Property(unaRutina => unaRutina.Nombre)
                     .HasColumnName("nombre")
                     .IsRequired();
 
             //conf. propiedad cantidad de dias: nombre y not null
-            this.Property(unaRutina => unaRutina.cantDias)
+            this.Property(unaRutina => unaRutina.CantDias)
                     .HasColumnName("dias")
                     .IsRequired();
 
             //conf. propiedad fecha de inicio: nombre y not null
-            this.Property(unaRutina => unaRutina.fechaInicio)
+            this.Property(unaRutina => unaRutina.FechaInicio)
                     .HasColumnName("fechaInicio")
                     .IsRequired();
 

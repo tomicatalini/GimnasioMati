@@ -13,59 +13,59 @@ namespace DataLayer.Mapping
             this.ToTable("FichaMedica");
 
             //conf. clave primaria: nombre, no auto incremental y not null.. elegi como clave la fecha
-            this.HasKey<DateTime>(unaFicha => unaFicha.fechaEntrega)
-                .Property(unaFicha => unaFicha.fechaEntrega)
+            this.HasKey<DateTime>(unaFicha => unaFicha.FechaEntrega)
+                .Property(unaFicha => unaFicha.FechaEntrega)
                     .HasColumnName("fechaEntrega")
                     .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None)
                     .IsRequired();
 
             //conf. propiedad peso: nombre y not null
-            this.Property(unaFicha => unaFicha.peso)
+            this.Property(unaFicha => unaFicha.Peso)
                     .HasColumnName("peso")
                     .IsRequired();
 
             //conf. propiedad altura: nombre y not null
-            this.Property(unaFicha => unaFicha.altura)
+            this.Property(unaFicha => unaFicha.Altura)
                     .HasColumnName("altura")
                     .IsRequired();
 
             //conf. propiedad grupo sanguineo: nombre y not null
-            this.Property(unaFicha => unaFicha.grupoSanguineo)
+            this.Property(unaFicha => unaFicha.GrupoSanguineo)
                     .HasColumnName("grupoSanguineo")
                     .IsRequired();
 
             //conf. propiedad hipertension arterial: nombre y not null
-            this.Property(unaFicha => unaFicha.hiperArterial)
+            this.Property(unaFicha => unaFicha.HiperArterial)
                     .HasColumnName("hiperArterial")
                     .IsRequired();
 
             //conf. propiedad diabetes: nombre y not null
-            this.Property(unaFicha => unaFicha.diabetes)
+            this.Property(unaFicha => unaFicha.Diabetes)
                     .HasColumnName("diabetes")
                     .IsRequired();
 
             //conf. propiedad afecCardVascular: nombre y not null
-            this.Property(unaFicha => unaFicha.afecCardVascular)
+            this.Property(unaFicha => unaFicha.AfecCardVascular)
                     .HasColumnName("afecCardioVascular")
                     .IsRequired();
 
             //conf. propiedad afecRespiratoria: nombre y not null
-            this.Property(unaFicha => unaFicha.afecResp)
+            this.Property(unaFicha => unaFicha.AfecResp)
                     .HasColumnName("afecResp")
                     .IsRequired();
 
             //conf. propiedad fuma: nombre y not null
-            this.Property(unaFicha => unaFicha.fuma)
+            this.Property(unaFicha => unaFicha.Fuma)
                     .HasColumnName("fuma")
                     .IsRequired();
 
             //conf. propiedad alcohol: nombre y not null
-            this.Property(unaFicha => unaFicha.alcohol)
+            this.Property(unaFicha => unaFicha.Alcohol)
                     .HasColumnName("alcohol")
                     .IsRequired();
 
             //relacion de uno a uno con socio
-            this.HasRequired<SocioDTO>(unaFicha => unaFicha.socio)
+            this.HasRequired<SocioDTO>(unaFicha => unaFicha.Socio)
                 .WithMany(unSocio => unSocio.HistorialMedico)
                     .Map(pMap => pMap.MapKey("fichaMedica"));
 

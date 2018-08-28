@@ -7,13 +7,13 @@ namespace DataLayer
     {
 
         //Properties navigation
-        public int dni { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public DateTime fechaNac { get; set; }
-        public string domicilio { get; set; }
-        public int telefono { get; set; }
-        public string mail { get; set; }
+        public int DNI { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public DateTime FechaNac { get; set; }
+        public string Domicilio { get; set; }
+        public int Telefono { get; set; }
+        public string Mail { get; set; }
 
         //Relationship navigation
         public virtual IList<CuotaDTO> Cuotas { get; set; }

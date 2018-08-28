@@ -7,16 +7,16 @@ namespace DataLayer
     public class CuotaDTO
     {
         //Properties navigation
-        public int nroCuota { get; set; }
-        public DateTime fechaEmision { get; set; }
-        public string descripcion { get; set; }
-        public float monto { get; set; }
-        public bool pagada { get; set; }
-        public MesDTO mes { get; set; }
-        public int año { get; set; }
+        public int NroCuota { get; set; }
+        public DateTime FechaEmision { get; set; }
+        public string Descripcion { get; set; }
+        public float Monto { get; set; }
+        public bool Pagada { get; set; }
+        public MesDTO Mes { get; set; }
+        public int Año { get; set; }
 
         //Relationship navigation
-        public virtual SocioDTO socio { get; set; }
+        public virtual SocioDTO Socio { get; set; }
         public virtual List<PagoDTO> Pagos { get; set; }
     
     }

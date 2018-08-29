@@ -14,7 +14,7 @@ namespace DataLayer.Mapping
             this.HasKey(unSocio => unSocio.DNI)
                 .Property(unSocio => unSocio.DNI)
                     .HasColumnName("dni")
-                    .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)
+                    .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None)
                     .IsRequired();
 
             //conf. propiedad nombre: nombre, not null y longitud maxima de 40 caracteres

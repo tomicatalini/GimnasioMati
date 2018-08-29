@@ -1,6 +1,8 @@
 ﻿using System.Data.Entity;
 using DataLayer.Mapping;
 
+//Para abrir la base de datos en SQLServer Managment
+//Nombre servidor: (localdb)\MSSQLLocalDB
 namespace DataLayer.DataBase
 {
     public class GymMatiContext : DbContext

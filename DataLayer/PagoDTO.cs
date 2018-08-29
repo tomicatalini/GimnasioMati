@@ -10,6 +10,7 @@ namespace DataLayer
         public float Importe { get; set; }
 
         //Relationship navigation
+        public virtual int NroCuota { get; set; }
         public virtual CuotaDTO Cuota { get; set; }
     }
 }

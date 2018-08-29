@@ -8,6 +8,7 @@ namespace DataLayer
         public string Nombre { get; set; }
 
         //Relationship navigation
+        public virtual int MusculoId { get; set; }
         public virtual MusculoDTO Musculo { get; set; }
 
     }

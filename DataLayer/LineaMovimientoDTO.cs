@@ -9,7 +9,10 @@ namespace DataLayer
         public int Cantidad { get; set; }
 
         //Relationship navigation
-        public MovimientoDTO Movimiento { get; set; }
-        public ProductoDTO Producto { get; set; }
+        public virtual int MovimientoId { get; set; }
+        public virtual MovimientoDTO Movimiento { get; set; }
+
+        public virtual int CodProducto { get; set; }
+        public virtual ProductoDTO Producto { get; set; }
     }
 }

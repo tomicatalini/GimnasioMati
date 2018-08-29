@@ -31,14 +31,6 @@ namespace DataLayer.Mapping
             this.Property(unaOperacion => unaOperacion.FechaRecuperacion)
                     .HasColumnName("fechaRecuperacion")
                     .IsOptional();
-
-            //relacion de uno a muchos con ficha medica
-            /*
-            this.HasRequired(unaOperacion => unaOperacion.FichaMedica)
-                .WithMany(unaFicha => unaFicha.Operaciones)
-                    .Map(pMap => pMap.MapKey("fichaMedica"));
-                    */
-
         }
     }
 }

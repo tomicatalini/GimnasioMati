@@ -47,17 +47,10 @@ namespace DataLayer.Mapping
                     .HasColumnName("pagada")
                     .IsRequired();
 
-            //relacion uno a uno entre con socio.
-            /*
-            this.HasRequired<SocioDTO>(unaCuota => unaCuota.Socio)
-                .WithMany(unSocio => unSocio.Cuotas)
-                .Map(pMap => pMap.MapKey("socio"));
-                */
-
-            //relacion de uno a muchos entre cuota y pago
+            //relacion de uno a muchos con pago
             this.HasMany<PagoDTO>(unaCuota => unaCuota.Pagos)
-                .WithOptional(unPago => unPago.Cuota)
-                    .Map(pMap => pMap.MapKey("nroPago"));
+                .WithRequired(unPago => unPago.Cuota)
+                    .HasForeignKey(unPago => unPago.NroCuota);
 
 
 

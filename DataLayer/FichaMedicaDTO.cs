@@ -7,6 +7,7 @@ namespace DataLayer
     public class FichaMedicaDTO
     {
         //Properties navigation
+        public int FichaId { get; set; }
         public DateTime FechaEntrega { get; set; }
         public int Peso { get; set; }
         public int Altura { get; set; }
@@ -19,6 +20,7 @@ namespace DataLayer
         public bool Alcohol { get; set; }
 
         //Relationship Navigation
+        public virtual long SocioDNI { get; set; }
         public virtual SocioDTO Socio { get; set; }
 
         public virtual IList<ContactoEmergenciaDTO> ContactoEmergencia { get; set; }

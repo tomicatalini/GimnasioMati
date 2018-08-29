@@ -25,13 +25,6 @@ namespace DataLayer.Mapping
             this.Property(unPago => unPago.Importe)
                     .HasColumnName("importe")
                     .IsRequired();
-
-            //relacion de uno a uno con cuota
-            /*
-            this.HasRequired<CuotaDTO>(unPago => unPago.Cuota)
-                .WithMany(unaCuota => unaCuota.Pagos)
-                    .Map(pMap => pMap.MapKey("cuota"));
-                    */
         }
     }
 }

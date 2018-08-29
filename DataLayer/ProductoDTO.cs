@@ -13,7 +13,9 @@ namespace DataLayer
         public bool Activo { get; set; }
 
         //Relationship navigation
-        public TipoProductoDTO TipoProducto { get; set; }
-        public IList<LineaMovimientoDTO> LineaMovimientos { get; set; }
+        public virtual int TipoId { get; set; }
+        public virtual TipoProductoDTO TipoProducto { get; set; }
+
+        public virtual IList<LineaMovimientoDTO> LineaMovimientos { get; set; }
     }
 }

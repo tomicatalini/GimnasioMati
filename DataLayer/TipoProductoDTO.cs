@@ -9,6 +9,6 @@ namespace DataLayer
         public string Nombre { get; set; }
 
         //Relationship navigation
-        public IList<ProductoDTO> Productos { get; set; }
+        public virtual IList<ProductoDTO> Productos { get; set; }
     }
 }

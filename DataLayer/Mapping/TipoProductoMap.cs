@@ -24,8 +24,8 @@ namespace DataLayer.Mapping
 
             //relacion de muchos a uno con producto
             this.HasMany(unTipo => unTipo.Productos)
-                .WithOptional(unProducto => unProducto.TipoProducto)
-                    .Map(pMap => pMap.MapKey("tipo"));
+                .WithRequired(unProducto => unProducto.TipoProducto)
+                    .HasForeignKey(unProducto => unProducto.TipoId);
         }
     }
 }

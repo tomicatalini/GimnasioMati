@@ -42,19 +42,11 @@ namespace DataLayer.Mapping
                     .HasColumnName("activo")
                     .IsRequired();
 
-            //relacion de uno a muchos con tipo de producto
-            /*
-            this.HasRequired(unProducto => unProducto.TipoProducto)
-                .WithMany(unTipo => unTipo.Productos)
-                    .Map(pMap => pMap.MapKey("tipo"));
-                    */
-
             //relacion de muchos a uno con linea de movimiento
-            /*
             this.HasMany(unProducto => unProducto.LineaMovimientos)
                 .WithRequired(unaLinea => unaLinea.Producto)
-                    .Map(pMap => pMap.MapKey("movimiento"));
-                    */
+                    .HasForeignKey(unaLinea => unaLinea.CodProducto);
+                  
         }
     }
 }

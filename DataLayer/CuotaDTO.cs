@@ -16,8 +16,10 @@ namespace DataLayer
         public int Año { get; set; }
 
         //Relationship navigation
+        public virtual long socioDNI { get; set; }
         public virtual SocioDTO Socio { get; set; }
-        public virtual List<PagoDTO> Pagos { get; set; }
+
+        public virtual IList<PagoDTO> Pagos { get; set; }
     
     }
 }

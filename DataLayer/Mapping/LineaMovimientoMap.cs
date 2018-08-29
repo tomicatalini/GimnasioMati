@@ -26,18 +26,6 @@ namespace DataLayer.Mapping
             this.Property(unaLinea => unaLinea.Cantidad)
                     .HasColumnName("cantidad")
                     .IsRequired();
-
-            //relacion de uno a muchos con movimiento
-            /*
-            this.HasRequired(unaLinea => unaLinea.Movimiento)
-                .WithMany(unMovimiento => unMovimiento.LineaMovimientos)
-                    .Map(pMap => pMap.MapKey("lineaMovimiento"));
-                    */
-
-            //relacion de uno a mucho con producto
-            this.HasRequired(unaLinea => unaLinea.Producto)
-                .WithMany(unProducto => unProducto.LineaMovimientos)
-                    .Map(pMap => pMap.MapKey("lineaMovimiento"));
         }
     }
 }

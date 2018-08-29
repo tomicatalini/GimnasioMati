@@ -21,14 +21,6 @@ namespace DataLayer.Mapping
             this.Property(unMedicamento => unMedicamento.Nombre)
                     .HasColumnName("nombre")
                     .IsRequired();
-
-            //relacion de uno a muchos con ficha medica
-            /*
-            this.HasRequired(unMedicamento => unMedicamento.FichaMedica)
-                .WithMany(unaFicha => unaFicha.Medicaciones)
-                    .Map(pMap => pMap.MapKey("fichaMedica"));
-                    */
-
         }
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer.DataBase;
+using BusinessLayer;
 
 namespace GymMati.Ventanas
 {
@@ -70,6 +72,22 @@ namespace GymMati.Ventanas
         private void Socio_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+            using (var DbContext = new GymMatiContext())
+            {
+                Controlador adm = new Controlador(DbContext);
+
+                adm.altaSocio(1, "tomas", "catalini", new DateTime(1995, 03, 11), "suipacha 345", 1312312, "tomascatalini@gmail.com");
+
+                adm.guardarCambios();
+            }
+
+            this.Close();
         }
     }
 }

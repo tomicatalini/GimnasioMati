@@ -31,14 +31,6 @@ namespace DataLayer.Mapping
             this.Property(unaLimitacion => unaLimitacion.FechaRecuperacion)
                     .HasColumnName("fechaRecuperacion")
                     .IsOptional();
-
-            //relacion de uno a muchos con ficha medica
-            /*
-            this.HasRequired(unaLimitacion => unaLimitacion.FichaMedica)
-                .WithMany(unaFicha => unaFicha.LimitacionesFisicas)
-                    .Map(pMap => pMap.MapKey("fichaMedica"));
-                    */
-
         }
     }
 }

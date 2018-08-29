@@ -30,7 +30,7 @@ namespace DataLayer.Mapping
             //relacion de muchos a uno con linea de movimiento
             this.HasMany(unMovimiento => unMovimiento.LineaMovimientos)
                 .WithRequired(unaLinea => unaLinea.Movimiento)
-                    .Map(pMap => pMap.MapKey("movimiento"));
+                    .HasForeignKey(unaLinea => unaLinea.MovimientoId);
     }
     }
 }

@@ -12,6 +12,6 @@ namespace DataLayer
 
 
         //Relationship navigations
-        public IList<LineaMovimientoDTO> LineaMovimientos { get; set; }
+        public virtual IList<LineaMovimientoDTO> LineaMovimientos { get; set; }
     }
 }

@@ -21,13 +21,6 @@ namespace DataLayer.Mapping
             this.Property(unEjercicio => unEjercicio.Nombre)
                     .HasColumnName("nombre")
                     .IsRequired();
-
-            //relacion de uno a muchos con musculo
-            /*
-            this.HasRequired(unEjercicio => unEjercicio.Musculo)
-                .WithMany(unMusculo => unMusculo.Ejercicios)
-                    .Map(pMap => pMap.MapKey("musculo"));
-                    */
         }
     }
 }

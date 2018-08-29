@@ -10,7 +10,10 @@ namespace DataLayer
         public int SeriesxRepeticion { get; set; }
 
         //Relationship navigation
+        public virtual int RutinaId { get; set; }
         public virtual RutinaDTO Rutina { get; set; }
+
+        public virtual int MusculoId { get; set; }
         public virtual MusculoDTO Musculo { get; set; }
 
     }

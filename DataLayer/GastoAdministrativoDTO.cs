@@ -10,6 +10,5 @@ namespace DataLayer
         public string Descripcion { get; set; }
         public float PrecioUnitario { get; set; }
         public DateTime Fecha { get; set; }
-
     }
 }

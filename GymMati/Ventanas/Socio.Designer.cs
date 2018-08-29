@@ -33,6 +33,7 @@
             this.btBajaSocio = new System.Windows.Forms.Button();
             this.btModSocio = new System.Windows.Forms.Button();
             this.btAltaSocio = new System.Windows.Forms.Button();
+            this.btnBD = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btClose
@@ -85,11 +86,22 @@
             this.btAltaSocio.UseVisualStyleBackColor = true;
             this.btAltaSocio.Click += new System.EventHandler(this.btAltaSocio_Click);
             // 
+            // btnBD
+            // 
+            this.btnBD.Location = new System.Drawing.Point(298, 247);
+            this.btnBD.Name = "btnBD";
+            this.btnBD.Size = new System.Drawing.Size(75, 23);
+            this.btnBD.TabIndex = 10;
+            this.btnBD.Text = "Probar BD";
+            this.btnBD.UseVisualStyleBackColor = true;
+            this.btnBD.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Socio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(503, 290);
+            this.Controls.Add(this.btnBD);
             this.Controls.Add(this.btClose);
             this.Controls.Add(this.btVerSocio);
             this.Controls.Add(this.btBajaSocio);
@@ -110,5 +122,6 @@
         private System.Windows.Forms.Button btBajaSocio;
         private System.Windows.Forms.Button btModSocio;
         private System.Windows.Forms.Button btAltaSocio;
+        private System.Windows.Forms.Button btnBD;
     }
 }

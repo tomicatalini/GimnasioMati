@@ -13,7 +13,7 @@ namespace DataLayer.Mapping
             //conf. clave primaria: nombre, autoincrement y not null
             this.HasKey(unDetalle => unDetalle.Id)
                 .Property(unDetalle => unDetalle.Id)
-                    .HasColumnName("musculoId")
+                    .HasColumnName("detalleId")
                     .IsRequired();
 
             //conf. propiedad dia: nombre y not null
@@ -30,18 +30,6 @@ namespace DataLayer.Mapping
             this.Property(unDetalle => unDetalle.SeriesxRepeticion)
                     .HasColumnName("seriexRepeticion")
                     .IsRequired();
-
-            //relacion de uno a muchas con rutina
-            /*
-            this.HasRequired(unDetalle => unDetalle.Rutina)
-                .WithMany(unaRutina => unaRutina.DetalleRutinas);
-                    //.Map(pMap => pMap.MapKey("Rutina"));
-                    */
-
-            //relacion de uno a muchas con musculo
-            this.HasRequired(unMusculo => unMusculo.Musculo)
-                .WithMany(unDetalle => unDetalle.DetallesDeRutina)
-                    .Map(pMap => pMap.MapKey("detalleRutina"));
         }
     }
 }

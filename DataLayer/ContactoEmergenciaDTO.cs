@@ -9,6 +9,7 @@ namespace DataLayer
         public long Telefono { get; set; }
 
         //Relationship navigation
-        public FichaMedicaDTO FichaMedica { get; set; }
+        public virtual int FichaId { get; set; }
+        public virtual FichaMedicaDTO FichaMedica { get; set; }
     }
 }

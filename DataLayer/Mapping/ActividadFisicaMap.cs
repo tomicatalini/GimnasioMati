@@ -27,13 +27,6 @@ namespace DataLayer.Mapping
                     .HasColumnName("horasSemanales")
                     .IsRequired();
 
-            //relacion de uno a muchos con ficha medica
-            /*
-            this.HasRequired(unaActividad => unaActividad.FichaMedica)
-                .WithMany(unaFicha => unaFicha.ActividadesFisicas)
-                    .Map(pMap => pMap.MapKey("fichaMedica"));
-                    */
-
         }
     }
 }

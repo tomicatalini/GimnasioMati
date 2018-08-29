@@ -14,7 +14,7 @@ namespace DataLayer.Mapping
             this.HasKey(unSocio => unSocio.DNI)
                 .Property(unSocio => unSocio.DNI)
                     .HasColumnName("dni")
-                    .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None)
+                    .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)
                     .IsRequired();
 
             //conf. propiedad nombre: nombre, not null y longitud maxima de 40 caracteres
@@ -44,23 +44,28 @@ namespace DataLayer.Mapping
             this.Property(unSocio => unSocio.Mail)
                    .HasColumnName("mail")
                    .IsOptional();
-            
+
             //Relacion de uno a muchos entre socio y cuotas
             this.HasMany(unSocio => unSocio.Cuotas)
-                .WithOptional(unaCuota => unaCuota.Socio)
-                    .Map(pMapping => pMapping.MapKey("socio"));
+                .WithRequired(unaCuota => unaCuota.Socio)
+                    .HasForeignKey<long>(unaCuota => unaCuota.socioDNI);
 
-            //Relacion de muchos a muchos entre socio y rutinas. Se hace una tabla intermedia llamada "socioRutina" con las columas RuntinaID y SocioDNI
+            //Relacion de muchos a muchos entre socio y rutinas. 
+            //Se hace una tabla intermedia llamada "socioRutina" con las columas SocioDNI y rutinaId.
             this.HasMany(unSocio => unSocio.Rutinas)
                 .WithMany(unaRutina => unaRutina.Socios)
-                    .Map(pMapping => pMapping.ToTable("socioRutina")
-                                            .MapLeftKey("rutina")
-                                            .MapRightKey("socio"));
+                    .Map(pMapping =>
+                                    {
+                                        pMapping.ToTable("socioRutina");
+                                        pMapping.MapLeftKey("socioDNI");
+                                        pMapping.MapRightKey("rutinaId");
+                                    });
 
-            //Relacion de uno a muchos entre socio y ficha medica
-            this.HasMany(unSocio => unSocio.HistorialMedico)
-                .WithOptional(unaFicha => unaFicha.Socio)
-                    .Map(pMapping => pMapping.MapKey("socio"));
+            //Relacion de uno a muchos con ficha medica (Historial medico)            
+             this.HasMany(unSocio => unSocio.HistorialMedico)
+                 .WithRequired(unaFicha => unaFicha.Socio)
+                    .HasForeignKey(unaFicha => unaFicha.SocioDNI);
+                    
 
         }
     }

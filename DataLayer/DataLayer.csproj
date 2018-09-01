@@ -52,17 +52,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActividadFisicaDTO.cs" />
-    <Compile Include="ContactoEmergenciaDTO.cs" />
-    <Compile Include="CuotaDTO.cs" />
+    <Compile Include="DataBase\CuotaRepository.cs" />
+    <Compile Include="DTO\ActividadFisicaDTO.cs" />
+    <Compile Include="DTO\ContactoEmergenciaDTO.cs" />
+    <Compile Include="DTO\CuotaDTO.cs" />
+    <Compile Include="DataBase\GastoAdministrativoRepository.cs" />
+    <Compile Include="DataBase\HistorialMedicoRepository.cs" />
+    <Compile Include="DataBase\MovimientoRepository.cs" />
+    <Compile Include="DataBase\PagoRepository.cs" />
+    <Compile Include="DataBase\ProductoRepository.cs" />
+    <Compile Include="DataBase\RutinaRepository.cs" />
+    <Compile Include="DataBase\SocioRepository.cs" />
+    <Compile Include="DataBase\UnitOfWork.cs" />
+    <Compile Include="InterfacesRepositorio\ICuotaRepository.cs" />
+    <Compile Include="InterfacesRepositorio\IGastoAdministrativoRepository.cs" />
     <Compile Include="DataBase\GymMatiContext.cs" />
-    <Compile Include="DetalleRutinaDTO.cs" />
-    <Compile Include="EjercicioDTO.cs" />
-    <Compile Include="EnfermedadDTO.cs" />
-    <Compile Include="FichaMedicaDTO.cs" />
-    <Compile Include="GastoAdministrativoDTO.cs" />
-    <Compile Include="LimitacionFisicaDTO.cs" />
-    <Compile Include="LineaMovimientoDTO.cs" />
+    <Compile Include="InterfacesRepositorio\IHistorialMedicoRepository.cs" />
+    <Compile Include="InterfacesRepositorio\IMovimientoRepository.cs" />
+    <Compile Include="InterfacesRepositorio\IPagoRepository.cs" />
+    <Compile Include="InterfacesRepositorio\IProductoRepository.cs" />
+    <Compile Include="DataBase\Repository.cs" />
+    <Compile Include="InterfacesRepositorio\IRutinaRepository.cs" />
+    <Compile Include="InterfacesRepositorio\ISocioRepository.cs" />
+    <Compile Include="DTO\DetalleRutinaDTO.cs" />
+    <Compile Include="DTO\EjercicioDTO.cs" />
+    <Compile Include="DTO\EnfermedadDTO.cs" />
+    <Compile Include="DTO\FichaMedicaDTO.cs" />
+    <Compile Include="DTO\GastoAdministrativoDTO.cs" />
+    <Compile Include="InterfacesRepositorio\IRepository.cs" />
+    <Compile Include="InterfacesRepositorio\IUnitOfWork.cs" />
+    <Compile Include="DTO\LimitacionFisicaDTO.cs" />
+    <Compile Include="DTO\LineaMovimientoDTO.cs" />
     <Compile Include="Mapping\ActividadFisicaMap.cs" />
     <Compile Include="Mapping\ContactoEmergenciaMap.cs" />
     <Compile Include="Mapping\CuotaMap.cs" />
@@ -82,24 +102,34 @@
     <Compile Include="Mapping\RutinaMap.cs" />
     <Compile Include="Mapping\SocioMap.cs" />
     <Compile Include="Mapping\TipoProductoMap.cs" />
-    <Compile Include="MedicacionDTO.cs" />
-    <Compile Include="MesDTO.cs" />
-    <Compile Include="MovimientoDTO.cs" />
-    <Compile Include="MusculoDTO.cs" />
-    <Compile Include="OperacionDTO.cs" />
-    <Compile Include="PagoDTO.cs" />
-    <Compile Include="ProductoDTO.cs" />
-    <Compile Include="RutinaDTO.cs" />
-    <Compile Include="SocioDTO.cs" />
+    <Compile Include="DTO\MedicacionDTO.cs" />
+    <Compile Include="DTO\MesDTO.cs" />
+    <Compile Include="DTO\MovimientoDTO.cs" />
+    <Compile Include="DTO\MusculoDTO.cs" />
+    <Compile Include="DTO\OperacionDTO.cs" />
+    <Compile Include="DTO\PagoDTO.cs" />
+    <Compile Include="DTO\ProductoDTO.cs" />
+    <Compile Include="DTO\RutinaDTO.cs" />
+    <Compile Include="DTO\SocioDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TipoMovimientoDTO.cs" />
-    <Compile Include="TipoProductoDTO.cs" />
+    <Compile Include="DTO\TipoMovimientoDTO.cs" />
+    <Compile Include="DTO\TipoProductoDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{88ece41d-88f9-479e-a7f1-a35afa9c25e4}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainLayer\DomainLayer.csproj">
+      <Project>{87621697-5ae8-4669-855f-0b8511e6634e}</Project>
+      <Name>DomainLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

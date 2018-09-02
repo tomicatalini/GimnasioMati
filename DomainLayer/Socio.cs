@@ -14,7 +14,6 @@ namespace DomainLayer
         public DateTime fecNacimiento { get; set; }
         public long telefono { get; set; }
         public string mail { get; set; }
-
         public IList<Rutina> Rutinas { get; set; }
         public IList<Cuota> Cuotas { get; set; }
         public IList<HistorialMedico> historialMedico { get; set; }

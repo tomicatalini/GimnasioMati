@@ -14,6 +14,7 @@ namespace DataLayer
         public string Domicilio { get; set; }
         public int Telefono { get; set; }
         public string Mail { get; set; }
+        public bool Activo { get; set; }
 
         //Relationship navigation
         public virtual IList<CuotaDTO> Cuotas { get; set; }

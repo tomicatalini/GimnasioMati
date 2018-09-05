@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLayer;
 using DataLayer.DataBase;
 using DataLayer;
 using System.Data.Entity;
+using BusinessLayer.Controladores;
 
 namespace GymMati.Ventanas
 {
@@ -32,7 +32,9 @@ namespace GymMati.Ventanas
                 }
                 else
                 {
-                    Controlador controlador = new Controlador(dbMati);
+                    //Controlador controlador = new Controlador(dbMati);
+                    BusinessLayer.Controladores.ControladorSocio controlador = new ControladorSocio();
+
                     this.nope.Visible = false;
                     
                     //Si no se existe el usuario
@@ -42,15 +44,15 @@ namespace GymMati.Ventanas
                     }
                     else
                     {
-                        SocioDTO unSocio = controlador.buscarSocio(Convert.ToInt32(this.tbBuscar.Text));
+                        DomainLayer.Socio unSocio = controlador.buscarSocio(Convert.ToInt32(this.tbBuscar.Text));
 
                         this.tbDni.Text = unSocio.DNI.ToString();
-                        this.tbNombre.Text = unSocio.Nombre;
-                        this.tbApellido.Text = unSocio.Apellido;
-                        this.tbDom.Text = unSocio.Domicilio;
-                        this.tbTel.Text = unSocio.Telefono.ToString();
-                        this.dtFechaNac.Value = unSocio.FechaNac;
-                        this.tbMail.Text = unSocio.Mail;
+                        this.tbNombre.Text = unSocio.nombre;
+                        this.tbApellido.Text = unSocio.apellido;
+                        this.tbDom.Text = unSocio.domicilio;
+                        this.tbTel.Text = unSocio.telefono.ToString();
+                        this.dtFechaNac.Value = unSocio.fecNacimiento;
+                        this.tbMail.Text = unSocio.mail;
                     }
                 }
             }

@@ -15,13 +15,13 @@ namespace DataLayer.InterfacesRepositorio
         /// Añade una entidad al repositorio
         /// </summary>
         /// <param name="pEntity">Entidad a agregar</param>
-        void add(TEntity pEntity);
+        void Add(TEntity pEntity);
 
         /// <summary>
         /// Elimina una entidad del repositorio
         /// </summary>
         /// <param name="pEntity">entidad a eliminar</param>
-        void remove(TEntity pEntity);
+        void Remove(TEntity pEntity);
 
         /// <summary>
         /// Obtiene una entidad por su ID

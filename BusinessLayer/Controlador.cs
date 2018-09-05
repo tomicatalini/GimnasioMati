@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DataLayer.DataBase;
 using DataLayer;
+using DomainLayer;
+
 namespace BusinessLayer
 {
     public class Controlador
@@ -12,7 +14,7 @@ namespace BusinessLayer
         //Contexto de base de datos
         private GymMatiContext dbMati;
 
-        public Controlador( GymMatiContext db )
+        public Controlador(GymMatiContext db)
         {
             //Inicializa la base de datos
             this.dbMati = db;
@@ -26,6 +28,8 @@ namespace BusinessLayer
 
         public SocioDTO buscarSocio(int dni)
         {
+            //Socio unSocio = new Socio();
+            //unSocio.
             //Busca un socio dentro del DbSet con coincidencia en dni
             SocioDTO socioBuscado = this.dbMati.Socios.Where(s => s.DNI == dni).Single();
 

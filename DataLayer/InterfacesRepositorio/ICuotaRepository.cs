@@ -11,8 +11,9 @@ namespace DataLayer.DataBase
     /// <summary>
     /// Repositorio generico para el acceso a las cuotas
     /// </summary>
-    public interface ICuotaRepository : IRepository<Cuota>
+    public interface ICuotaRepository : IRepository<CuotaDTO>
     {
-        //agregar metodos de cuota. Ej 
+        //IQueryable<CuotaDTO> SearchFor(this IQueryable<CuotaDTO> source, Expression<Func<TSource, bool>> predicate);
+        CuotaDTO UltimaCuotaSocio(long pDni)
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DomainLayer
 {
-    enum TipoMovimiento
+    public enum TipoMovimiento
     {
         compra, venta
     }

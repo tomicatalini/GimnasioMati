@@ -14,5 +14,9 @@ namespace DataLayer.DataBase
     public interface IProductoRepository: IRepository<Producto>
     {
         //Agregar metodos de productos.
+        IList<Producto> GetByCadena(string cadena);
+        IList<TipoProducto> GetTiposProductos();
+        //IList<Marca> GetMarcas();
+        //IList<ProductoDTO> listaBuscarProducto();
     }
 }

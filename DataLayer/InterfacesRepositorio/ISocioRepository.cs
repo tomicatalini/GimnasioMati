@@ -14,14 +14,7 @@ namespace DataLayer.DataBase
     /// </summary>
     public interface ISocioRepository: IRepository<Socio>
     {
-        /// <summary>
-        /// Devuelve el socio cuyo dni coincida con el dado
-        /// </summary>
-        /// <param name="pDNI">Parámetro de búsqueda</param>
-        /// <returns></returns>
-        IEnumerable<Socio> GetSocioActive(long pDNI);
-
-        
-        //Agregar métodos del socio. Ejemplo getSocio(long pDNI)
+        IList<Socio> GetSociosByString(string pCadena);
+        IList<Socio> GetSociosActivos();
     }
 }

@@ -12,9 +12,7 @@ namespace DataLayer.DataBase
     /// </summary>
     public class CuotaRepository : Repository<Cuota, GymMatiContext>, ICuotaRepository 
     {
-        public CuotaRepository(GymMatiContext pContext) : base (pContext)
-        {
+        public CuotaRepository(GymMatiContext pContext) : base(pContext) { }
 
-        }
     }
 }

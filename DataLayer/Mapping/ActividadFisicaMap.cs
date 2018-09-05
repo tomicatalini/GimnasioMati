@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
+using DomainLayer;
 
 namespace DataLayer.Mapping
 {
-    class ActividadFisicaMap : EntityTypeConfiguration<ActividadFisicaDTO>
+    class ActividadFisicaMap : EntityTypeConfiguration<ActividadFisica>
     {
         public ActividadFisicaMap()
         {

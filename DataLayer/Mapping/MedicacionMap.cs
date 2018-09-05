@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
+using DomainLayer;
 
 namespace DataLayer.Mapping
 {
-    class MedicacionMap : EntityTypeConfiguration<MedicacionDTO>
+    class MedicacionMap : EntityTypeConfiguration<Medicacion>
     {
         public MedicacionMap()
         {

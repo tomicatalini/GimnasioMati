@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GymMati.Ventanas;
+using GymMati.VentanasNuevas.ProductoIU;
 
 namespace GymMati
 {
@@ -18,8 +19,8 @@ namespace GymMati
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Socio ventanaSocio = new Socio();
-            Application.Run(ventanaSocio);
+            //AltaProductoUI ventanaPpal = new AltaProductoUI();
+            Application.Run(new ModPreciosProductosUI());
 
         }
     }

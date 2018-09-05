@@ -13,6 +13,6 @@ namespace DataLayer.DataBase
     /// </summary>
     public interface ICuotaRepository : IRepository<Cuota>
     {
-        //agregar metodos de cuota. Ej 
+        
     }
 }

@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
+using DomainLayer;
 
 namespace DataLayer.Mapping
 {
-    class MusculoMap : EntityTypeConfiguration<MusculoDTO>
+    class MusculoMap : EntityTypeConfiguration<Musculo>
     {
         public MusculoMap()
         {

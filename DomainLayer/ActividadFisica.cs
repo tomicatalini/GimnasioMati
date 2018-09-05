@@ -2,9 +2,12 @@
 {
     public class ActividadFisica
     {
-        public string nombre { get; set; }
-        public int cantHoraSem { get; set; }
-        public HistorialMedico historialMedico { get; set; }
+        public long Id { get; set; }
+        public string Nombre { get; set; }
+        public int CantHoraSem { get; set; }
+
+        public virtual int FichaId { get; set; }
+        public virtual FichaMedica FichaMedica { get; set; }
 
     }
 }

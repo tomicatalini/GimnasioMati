@@ -8,9 +8,10 @@ namespace DomainLayer
 {
     public class GastoAdministrativo
     {
-        public int cantidad { get; set; }
-        public string descripcion { get; set; }
-        public float precioUnitario { get; set; }
-        public DateTime fecha { get; set; }
+        public int Id { get; set; }
+        public int Cantidad { get; set; }
+        public string Descripcion { get; set; }
+        public float PrecioUnitario { get; set; }
+        public DateTime Fecha { get; set; }
     }
 }

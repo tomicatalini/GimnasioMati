@@ -2,7 +2,10 @@
 {
     public class Enfermedad
     {
-        public string nombre { get; set; }
-        public HistorialMedico historialMedico { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+
+        public virtual int FichaId { get; set; }
+        public virtual FichaMedica FichaMedica { get; set; }
     }
 }

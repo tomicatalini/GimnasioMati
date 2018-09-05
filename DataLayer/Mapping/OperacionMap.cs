@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
+using DomainLayer;
 
 namespace DataLayer.Mapping
 {
-    class OperacionMap : EntityTypeConfiguration<OperacionDTO>
+    class OperacionMap : EntityTypeConfiguration<Operacion>
     {
         public OperacionMap()
         {
@@ -23,12 +24,12 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //conf. propiedad fecha operacion: nombre y not null
-            this.Property(unaOperacion => unaOperacion.FechaOperacion)
+            this.Property(unaOperacion => unaOperacion.FecOperacion)
                     .HasColumnName("fechaOperacion")
                     .IsOptional();
 
             //conf. propiedad fecha recperacion: nombre y not null
-            this.Property(unaOperacion => unaOperacion.FechaRecuperacion)
+            this.Property(unaOperacion => unaOperacion.FecAltaMedica)
                     .HasColumnName("fechaRecuperacion")
                     .IsOptional();
         }

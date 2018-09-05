@@ -7,11 +7,11 @@ using DomainLayer;
 
 namespace DataLayer.DataBase
 {
-    public class MovimientoRepository: Repository<Movimiento, GymMatiContext>, IMovimientoRepository
+    public class MovimientoRepository //: Repository<Movimiento, GymMatiContext>, IMovimientoRepository
     {
-        public MovimientoRepository(GymMatiContext pContext) : base (pContext)
-        {
+        //public MovimientoRepository(GymMatiContext pContext) : base (pContext)
+        //{
 
-        }
+        //}
     }
 }

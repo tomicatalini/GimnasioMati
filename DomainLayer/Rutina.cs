@@ -8,11 +8,22 @@ namespace DomainLayer
 {
     public class Rutina
     {
-        public string nombre { get; set; }
-        public int cantDias { get; set; }
-        public DateTime fecInicio { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public int CantDias { get; set; }
+        public DateTime FecInicio { get; set; }
 
-        public IList<Socio> Socios { get; set; }
-        public IList<DetalleRutina> detallesRutina { get; set; }
+        public virtual IList<Socio> Socios { get; set; }
+        public virtual IList<DetalleRutina> DetallesRutina { get; set; }
+
+        public Rutina(string nombre, int duracion, DateTime fechaIncio)
+        {
+            this.CantDias = duracion;
+            this.FecInicio = fechaIncio;
+            this.Nombre = nombre;
+
+            this.Socios = new List<Socio>();
+            this.DetallesRutina = new List<DetalleRutina>();
+        }
     }
 }

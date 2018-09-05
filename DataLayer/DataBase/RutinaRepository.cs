@@ -10,11 +10,16 @@ namespace DataLayer.DataBase
     /// <summary>
     /// Repositorio de entidad Rutina
     /// </summary>
-    public class RutinaRepository: Repository<Rutina, GymMatiContext>, IRutinaRepository
+    public class RutinaRepository : Repository<Rutina, GymMatiContext>, IRutinaRepository
     {
-        public RutinaRepository(GymMatiContext pContext) : base (pContext)
+        public RutinaRepository(GymMatiContext pContext) : base(pContext)
         {
 
         }
+
+        //public IList<Rutina> GetByNombre(string cadena)
+        //{
+        //    return this.iDbContext.Rutinas.Where(unaRutina => unaRutina.Nombre.Contains(cadena));
+        //}
     }
 }

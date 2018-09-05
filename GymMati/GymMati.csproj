@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>GymMati</RootNamespace>
     <AssemblyName>GymMati</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -56,39 +56,159 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ventanas\CRUD Socio\AltaSocio.cs">
+    <Compile Include="VentanasNuevas\ControlesPersonalizados\ButtonPressed.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VentanasNuevas\ControlesPersonalizados\ButtonPressed.Designer.cs">
+      <DependentUpon>ButtonPressed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasNuevas\ControlesPersonalizados\TextBoxValidar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VentanasNuevas\ControlesPersonalizados\TextBoxValidar.Designer.cs">
+      <DependentUpon>TextBoxValidar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasNuevas\ProductoIU\AltaProductoUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\CRUD Socio\AltaSocio.Designer.cs">
+    <Compile Include="VentanasNuevas\ProductoIU\AltaProductoUI.Designer.cs">
+      <DependentUpon>AltaProductoUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasNuevas\ProductoIU\ModPreciosProductiosUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasNuevas\ProductoIU\ModPreciosProductiosUI.Designer.cs">
+      <DependentUpon>ModPreciosProductiosUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasNuevas\ProductoIU\VerProductoYmasUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasNuevas\ProductoIU\VerProductoYmasUI.Designer.cs">
+      <DependentUpon>VerProductoYmasUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasNuevas\ProductoIU\BuscarProductoUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasNuevas\ProductoIU\BuscarProductoUI.Designer.cs">
+      <DependentUpon>BuscarProductoUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasNuevas\SocioUI\AltaSocioUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasNuevas\SocioUI\AltaSocioUI.Designer.cs">
+      <DependentUpon>AltaSocioUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasNuevas\SocioUI\BajaSocioUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasNuevas\SocioUI\BajaSocioUI.Designer.cs">
+      <DependentUpon>BajaSocioUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasNuevas\SocioUI\BaseBuscarUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasNuevas\SocioUI\BaseBuscarUI.Designer.cs">
+      <DependentUpon>BaseBuscarUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasNuevas\SocioUI\BaseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasNuevas\SocioUI\BaseUI.Designer.cs">
+      <DependentUpon>BaseUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasNuevas\SocioUI\ModificarSocioUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasNuevas\SocioUI\ModificarSocioUI.Designer.cs">
+      <DependentUpon>ModificarSocioUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasNuevas\SocioUI\VerSocioUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasNuevas\SocioUI\VerSocioUI.Designer.cs">
+      <DependentUpon>VerSocioUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasNuevas\Utilidades.cs" />
+    <Compile Include="VentanasViejas\CRUD Socio\AltaSocio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanasViejas\CRUD Socio\AltaSocio.Designer.cs">
       <DependentUpon>AltaSocio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\CRUD Socio\BajaSocio.cs">
+    <Compile Include="VentanasViejas\CRUD Socio\BajaSocio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\CRUD Socio\BajaSocio.Designer.cs">
+    <Compile Include="VentanasViejas\CRUD Socio\BajaSocio.Designer.cs">
       <DependentUpon>BajaSocio.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ventanas\CRUD Socio\ModificarSocio.cs">
+    <Compile Include="VentanasViejas\CRUD Socio\ModificarSocio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\CRUD Socio\ModificarSocio.Designer.cs">
+    <Compile Include="VentanasViejas\CRUD Socio\ModificarSocio.Designer.cs">
       <DependentUpon>ModificarSocio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\CRUD Socio\Socio.cs">
+    <Compile Include="VentanasViejas\CRUD Socio\Socio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\CRUD Socio\Socio.Designer.cs">
+    <Compile Include="VentanasViejas\CRUD Socio\Socio.Designer.cs">
       <DependentUpon>Socio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\CRUD Socio\VerSocio.cs">
+    <Compile Include="VentanasViejas\CRUD Socio\VerSocio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\CRUD Socio\VerSocio.Designer.cs">
+    <Compile Include="VentanasViejas\CRUD Socio\VerSocio.Designer.cs">
       <DependentUpon>VerSocio.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Ventanas\CRUD Socio\AltaSocio.resx">
+    <Compile Include="_DataLayer_DataBase_GymMatiContextDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_DataLayer_DataBase_GymMatiContextDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_DataLayer_DataBase_GymMatiContextDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_DataLayer_DataBase_GymMatiContextDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_DataLayer_DataBase_GymMatiContextDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_DataLayer_DataBase_GymMatiContextDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_DataLayer_DataBase_GymMatiContextDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_DataLayer_DataBase_GymMatiContextDataSet3.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="VentanasNuevas\ProductoIU\AltaProductoUI.resx">
+      <DependentUpon>AltaProductoUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasNuevas\ProductoIU\ModPreciosProductiosUI.resx">
+      <DependentUpon>ModPreciosProductiosUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasNuevas\ProductoIU\VerProductoYmasUI.resx">
+      <DependentUpon>VerProductoYmasUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasNuevas\ProductoIU\BuscarProductoUI.resx">
+      <DependentUpon>BuscarProductoUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasNuevas\SocioUI\AltaSocioUI.resx">
+      <DependentUpon>AltaSocioUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasNuevas\SocioUI\BaseBuscarUI.resx">
+      <DependentUpon>BaseBuscarUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasNuevas\SocioUI\BaseUI.resx">
+      <DependentUpon>BaseUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasNuevas\SocioUI\ModificarSocioUI.resx">
+      <DependentUpon>ModificarSocioUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasNuevas\SocioUI\VerSocioUI.resx">
+      <DependentUpon>VerSocioUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanasViejas\CRUD Socio\AltaSocio.resx">
       <DependentUpon>AltaSocio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -101,19 +221,22 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Ventanas\CRUD Socio\BajaSocio.resx">
+    <EmbeddedResource Include="VentanasViejas\CRUD Socio\BajaSocio.resx">
       <DependentUpon>BajaSocio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\CRUD Socio\ModificarSocio.resx">
+    <EmbeddedResource Include="VentanasViejas\CRUD Socio\ModificarSocio.resx">
       <DependentUpon>ModificarSocio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\CRUD Socio\Socio.resx">
+    <EmbeddedResource Include="VentanasViejas\CRUD Socio\Socio.resx">
       <DependentUpon>Socio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventanas\CRUD Socio\VerSocio.resx">
+    <EmbeddedResource Include="VentanasViejas\CRUD Socio\VerSocio.resx">
       <DependentUpon>VerSocio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DataLayer.DataBase.IProductoRepository.datasource" />
+    <None Include="Properties\DataSources\DataLayer.DataBase.TipoProductoRepository.datasource" />
+    <None Include="Properties\DataSources\DomainLayer.Socio.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,6 +246,50 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_DataLayer_DataBase_GymMatiContextDataSet11.xsc">
+      <DependentUpon>_DataLayer_DataBase_GymMatiContextDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="_DataLayer_DataBase_GymMatiContextDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_DataLayer_DataBase_GymMatiContextDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_DataLayer_DataBase_GymMatiContextDataSet11.xss">
+      <DependentUpon>_DataLayer_DataBase_GymMatiContextDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="_DataLayer_DataBase_GymMatiContextDataSet2.xsc">
+      <DependentUpon>_DataLayer_DataBase_GymMatiContextDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="_DataLayer_DataBase_GymMatiContextDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_DataLayer_DataBase_GymMatiContextDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_DataLayer_DataBase_GymMatiContextDataSet2.xss">
+      <DependentUpon>_DataLayer_DataBase_GymMatiContextDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="_DataLayer_DataBase_GymMatiContextDataSet21.xsc">
+      <DependentUpon>_DataLayer_DataBase_GymMatiContextDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="_DataLayer_DataBase_GymMatiContextDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_DataLayer_DataBase_GymMatiContextDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_DataLayer_DataBase_GymMatiContextDataSet21.xss">
+      <DependentUpon>_DataLayer_DataBase_GymMatiContextDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="_DataLayer_DataBase_GymMatiContextDataSet3.xsc">
+      <DependentUpon>_DataLayer_DataBase_GymMatiContextDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="_DataLayer_DataBase_GymMatiContextDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_DataLayer_DataBase_GymMatiContextDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_DataLayer_DataBase_GymMatiContextDataSet3.xss">
+      <DependentUpon>_DataLayer_DataBase_GymMatiContextDataSet3.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -140,6 +307,9 @@
       <Project>{87621697-5ae8-4669-855f-0b8511e6634e}</Project>
       <Name>DomainLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

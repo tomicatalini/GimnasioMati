@@ -10,11 +10,11 @@ using DataLayer.InterfacesRepositorio;
 
 namespace DataLayer.DataBase
 {
-    public class PagoRepository: Repository<Pago, GymMatiContext>, IPagoRepository
+    public class PagoRepository //: Repository<Pago, GymMatiContext>, IPagoRepository
     {
-        public PagoRepository(GymMatiContext pContext) : base (pContext)
-        {
+        //public PagoRepository(GymMatiContext pContext) : base (pContext)
+        //{
 
-        }
+        //}
     }
 }

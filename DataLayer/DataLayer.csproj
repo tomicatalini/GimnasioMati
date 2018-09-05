@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -44,6 +47,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,7 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase\CuotaRepository.cs" />
+    <Compile Include="DataBase\EjercicioRepository.cs" />
+    <Compile Include="DataBase\MusculoRepository.cs" />
+    <Compile Include="DataBase\TipoProductoRepository.cs" />
     <Compile Include="DTO\ActividadFisicaDTO.cs" />
+    <Compile Include="DTO\TablaInfoGlobal.cs" />
     <Compile Include="DTO\ContactoEmergenciaDTO.cs" />
     <Compile Include="DTO\CuotaDTO.cs" />
     <Compile Include="DataBase\GastoAdministrativoRepository.cs" />
@@ -65,10 +76,12 @@
     <Compile Include="DataBase\SocioRepository.cs" />
     <Compile Include="DataBase\UnitOfWork.cs" />
     <Compile Include="InterfacesRepositorio\ICuotaRepository.cs" />
+    <Compile Include="InterfacesRepositorio\IEjercicioRepository.cs" />
     <Compile Include="InterfacesRepositorio\IGastoAdministrativoRepository.cs" />
     <Compile Include="DataBase\GymMatiContext.cs" />
     <Compile Include="InterfacesRepositorio\IHistorialMedicoRepository.cs" />
     <Compile Include="InterfacesRepositorio\IMovimientoRepository.cs" />
+    <Compile Include="InterfacesRepositorio\IMusculoRepository.cs" />
     <Compile Include="InterfacesRepositorio\IPagoRepository.cs" />
     <Compile Include="InterfacesRepositorio\IProductoRepository.cs" />
     <Compile Include="DataBase\Repository.cs" />
@@ -80,6 +93,7 @@
     <Compile Include="DTO\FichaMedicaDTO.cs" />
     <Compile Include="DTO\GastoAdministrativoDTO.cs" />
     <Compile Include="InterfacesRepositorio\IRepository.cs" />
+    <Compile Include="InterfacesRepositorio\ITipoProductoRepository.cs" />
     <Compile Include="InterfacesRepositorio\IUnitOfWork.cs" />
     <Compile Include="DTO\LimitacionFisicaDTO.cs" />
     <Compile Include="DTO\LineaMovimientoDTO.cs" />
@@ -122,10 +136,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
-      <Project>{88ece41d-88f9-479e-a7f1-a35afa9c25e4}</Project>
-      <Name>BusinessLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DomainLayer\DomainLayer.csproj">
       <Project>{87621697-5ae8-4669-855f-0b8511e6634e}</Project>
       <Name>DomainLayer</Name>

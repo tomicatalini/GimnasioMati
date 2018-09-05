@@ -27,7 +27,7 @@ namespace DataLayer.DataBase
         /// Agrega la entidad
         /// </summary>
         /// <param name="entity"></param>
-        public void Create(TEntity pEntity)
+        public void Add(TEntity pEntity)
         {
             if (pEntity == null)
             {
@@ -79,14 +79,15 @@ namespace DataLayer.DataBase
             return this.iDbContext.Set<TEntity>().ToList();
         }
 
-        public void add(TEntity pEntity)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void remove(TEntity pEntity)
-        {
-            throw new NotImplementedException();
-        }
+        //public void add(TEntity pEntity)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public void remove(TEntity pEntity)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
+using DomainLayer;
 
 namespace DataLayer.Mapping
 {
-    class DetalleRutinaMap : EntityTypeConfiguration<DetalleRutinaDTO>
+    class DetalleRutinaMap : EntityTypeConfiguration<DetalleRutina>
     {
         public DetalleRutinaMap()
         {
@@ -27,7 +28,7 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //conf. propiedad dia: nombre y not null
-            this.Property(unDetalle => unDetalle.SeriesxRepeticion)
+            this.Property(unDetalle => unDetalle.SeriesxRepeticiones)
                     .HasColumnName("seriexRepeticion")
                     .IsRequired();
         }

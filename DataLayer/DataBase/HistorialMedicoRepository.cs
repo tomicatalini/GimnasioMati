@@ -10,11 +10,11 @@ namespace DataLayer.DataBase
     /// <summary>
     /// Repositorio de entidad HistorialMedico
     /// </summary>
-    public class HistorialMedicoRepository : Repository<HistorialMedico, GymMatiContext>, IHistorialMedicoRepository
+    public class HistorialMedicoRepository //: Repository<HistorialMedico, GymMatiContext>, IHistorialMedicoRepository
     {
-        public HistorialMedicoRepository(GymMatiContext pContext) : base (pContext)
-        {
+        //public HistorialMedicoRepository(GymMatiContext pContext) : base (pContext)
+        //{
 
-        }
+        //}
     }
 }

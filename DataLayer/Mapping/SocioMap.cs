@@ -1,8 +1,9 @@
 ﻿using System.Data.Entity.ModelConfiguration;
+using DomainLayer;
 
 namespace DataLayer.Mapping
 {
-    class SocioMap : EntityTypeConfiguration<SocioDTO>
+    class SocioMap : EntityTypeConfiguration<Socio>
     {
         //unSocio => unSocio
         public SocioMap()
@@ -10,11 +11,14 @@ namespace DataLayer.Mapping
             //Nombre de la tabla
             this.ToTable("Socio");
 
-            //Declaracion de clave primaria sobre el campo dni. Esta propiedad (dni) se le especifica un nombre a la columna y que es NOT NULL (IsRequired)
-            this.HasKey(unSocio => unSocio.DNI)
-                .Property(unSocio => unSocio.DNI)
-                    .HasColumnName("dni")
-                    .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None)
+            //Declaracion de clave primaria sobre el campo dni. Esta propiedad (nroSocio) se le especifica un nombre a la columna y que es NOT NULL (IsRequired)
+            this.HasKey(unSocio => unSocio.NroSocio)
+                .Property(unSocio => unSocio.NroSocio)
+                    .HasColumnName("nroSocio")
+                    .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)
+                    .IsRequired();
+            //conf. propiedad nroSocio: nombre y not null
+            this.Property(unSocio => unSocio.NroSocio)
                     .IsRequired();
 
             //conf. propiedad nombre: nombre, not null y longitud maxima de 40 caracteres
@@ -28,7 +32,7 @@ namespace DataLayer.Mapping
                     .HasMaxLength(40);
 
             //conf. propiedad fecha nacimiento: nombre y not null
-            this.Property(unSocio => unSocio.FechaNac)
+            this.Property(unSocio => unSocio.FecNacimiento)
                     .IsRequired();
 
             //conf. propiedad telefono: nombre y not null
@@ -45,13 +49,13 @@ namespace DataLayer.Mapping
                    .HasColumnName("mail")
                    .IsOptional();
 
-            //Relacion de uno a muchos entre socio y cuotas
+            ////Relacion de uno a muchos entre socio y cuotas
             this.HasMany(unSocio => unSocio.Cuotas)
                 .WithRequired(unaCuota => unaCuota.Socio)
-                    .HasForeignKey<long>(unaCuota => unaCuota.socioDNI);
+                    .HasForeignKey<int>(unaCuota => unaCuota.SocioDNI);
 
-            //Relacion de muchos a muchos entre socio y rutinas. 
-            //Se hace una tabla intermedia llamada "socioRutina" con las columas SocioDNI y rutinaId.
+            ////Relacion de muchos a muchos entre socio y rutinas. 
+            ////Se hace una tabla intermedia llamada "socioRutina" con las columas SocioDNI y rutinaId.
             this.HasMany(unSocio => unSocio.Rutinas)
                 .WithMany(unaRutina => unaRutina.Socios)
                     .Map(pMapping =>
@@ -62,10 +66,10 @@ namespace DataLayer.Mapping
                                     });
 
             //Relacion de uno a muchos con ficha medica (Historial medico)            
-             this.HasMany(unSocio => unSocio.HistorialMedico)
-                 .WithRequired(unaFicha => unaFicha.Socio)
-                    .HasForeignKey(unaFicha => unaFicha.SocioDNI);
-                    
+            this.HasMany(unSocio => unSocio.HistorialMedico)
+                .WithRequired(unaFicha => unaFicha.Socio)
+                   .HasForeignKey(unaFicha => unaFicha.SocioDNI);
+
 
         }
     }

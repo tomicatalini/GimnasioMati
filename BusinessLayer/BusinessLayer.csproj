@@ -51,7 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controlador.cs" />
+    <Compile Include="Controladores\ControladorCuota.cs" />
+    <Compile Include="Controladores\ControladorProducto.cs" />
+    <Compile Include="Controladores\ControladorRutina.cs" />
+    <Compile Include="Controladores\ControladorSocio.cs" />
+    <Compile Include="IRutina.cs" />
     <Compile Include="ISocioService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +63,10 @@
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
       <Project>{c5d55cdc-eda1-4281-bace-0fa829983046}</Project>
       <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainLayer\DomainLayer.csproj">
+      <Project>{87621697-5ae8-4669-855f-0b8511e6634e}</Project>
+      <Name>DomainLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

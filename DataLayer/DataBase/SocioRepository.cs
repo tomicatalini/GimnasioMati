@@ -1,8 +1,5 @@
-﻿//using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DomainLayer;
 using AutoMapper;
 
@@ -11,28 +8,19 @@ namespace DataLayer.DataBase
     /// <summary>
     /// Repositorio de entidad socio
     /// </summary>
-    public class SocioRepository : Repository<SocioDTO, GymMatiContext>, ISocioRepository
+    public class SocioRepository : Repository<Socio, GymMatiContext>, ISocioRepository
     {
-        public SocioRepository(GymMatiContext pContext) : base (pContext) { }
+        public SocioRepository(GymMatiContext pContext) : base (pContext) { }             
 
-        //SE SACO EL METODO GETSOCIOACTIVE
-
-        /// <summary>
-        /// Determina la existencia de un socio
-        /// </summary>
-        /// <param name="pDni"></param>
-        /// <returns></returns>
-        public bool Exist(long pDni)
+        public IList<Socio> GetSociosByString(string pCadena)
         {
-            return this.iDbContext.Socios.Contains(pDni);
+            return this.iDbContext.Socios.Where(unSocio => unSocio.Apellido.StartsWith(pCadena)).ToList();
         }
 
-
-        //public IList<SocioDTO> GetByName(string pPacialName)
-        //{
-        //    this.iDbContext.Socios.SqlQuery("SELECT * FROM dbo.Socio Where DNI like" + pPacialName + "%");
-        //}
-        
+        public IList<Socio> GetSociosActivos()
+        {
+            return this.iDbContext.Socios.Where(unSocio => unSocio.Activo).ToList();
+        }
     }
     
 }

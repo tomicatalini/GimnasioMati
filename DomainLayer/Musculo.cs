@@ -5,8 +5,16 @@ namespace DomainLayer
 {
     public class Musculo
     {
-        public string nombre { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
 
-        public IList<Ejercicio> Ejercicios { get; set; }
+        public virtual IList<Ejercicio> Ejercicios { get; set; }
+        public virtual IList<DetalleRutina> DetallesDeRutina { get; set; }
+
+        public Musculo(string nombre)
+        {
+            this.Nombre = nombre;
+        }
+
     }
 }

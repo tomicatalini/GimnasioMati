@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
+using DomainLayer;
 
 namespace DataLayer.Mapping
 {
-    class FichaMedicaMap : EntityTypeConfiguration<FichaMedicaDTO>
+    class FichaMedicaMap : EntityTypeConfiguration<FichaMedica>
     {
         public FichaMedicaMap()
         {
@@ -70,32 +71,32 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //relacion de uno a muchos con contacto de emergencia
-            this.HasMany<ContactoEmergenciaDTO>(unaFicha => unaFicha.ContactoEmergencia)
+            this.HasMany<ContactoEmergencia>(unaFicha => unaFicha.ContactoEmergencia)
                 .WithRequired(unContacto => unContacto.FichaMedica)
                     .HasForeignKey(unContacto => unContacto.FichaId);
 
             //relacion de uno a muchos con Medicacion
-            this.HasMany<MedicacionDTO>(unaFicha => unaFicha.Medicaciones)
+            this.HasMany<Medicacion>(unaFicha => unaFicha.Medicaciones)
                 .WithRequired(unMedicamento => unMedicamento.FichaMedica)
                     .HasForeignKey(unMedicamento => unMedicamento.FichaId);
 
             //relacion de uno a muchos con nfermedad
-            this.HasMany<EnfermedadDTO>(unaFicha => unaFicha.Enfermedades)
+            this.HasMany<Enfermedad>(unaFicha => unaFicha.Enfermedades)
                 .WithRequired(unaEnfermedad => unaEnfermedad.FichaMedica)
                     .HasForeignKey(unaEnfermedad => unaEnfermedad.FichaId);
 
             //relacion de uno a muchos con actividad fisica
-            this.HasMany<ActividadFisicaDTO>(unaFicha => unaFicha.ActividadesFisicas)
+            this.HasMany<ActividadFisica>(unaFicha => unaFicha.ActividadesFisicas)
                 .WithRequired(unaActividad => unaActividad.FichaMedica)
                     .HasForeignKey(unaActividad => unaActividad.FichaId);
 
             //relacion de uno a muchos con operacion
-            this.HasMany<OperacionDTO>(unaFicha => unaFicha.Operaciones)
+            this.HasMany<Operacion>(unaFicha => unaFicha.Operaciones)
                 .WithRequired(unaOperacion => unaOperacion.FichaMedica)
                     .HasForeignKey(unaOperacion => unaOperacion.FichaId);
 
             //relacion de uno a muchos con limitacion fisica
-            this.HasMany<LimitacionFisicaDTO>(unaFicha => unaFicha.LimitacionesFisicas)
+            this.HasMany<LimitacionFisica>(unaFicha => unaFicha.LimitacionesFisicas)
                 .WithRequired(unaLimitacion => unaLimitacion.FichaMedica)
                     .HasForeignKey(unaLimitacion => unaLimitacion.FichaId);
         }

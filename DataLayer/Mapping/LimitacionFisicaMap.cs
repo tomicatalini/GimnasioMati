@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
+using DomainLayer;
 
 namespace DataLayer.Mapping
 {
-    class LimitacionFisicaMap : EntityTypeConfiguration<LimitacionFisicaDTO>
+    class LimitacionFisicaMap : EntityTypeConfiguration<LimitacionFisica>
     {
         public LimitacionFisicaMap()
         {
@@ -23,12 +24,12 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //conf. propiedad fecha ocurrencia: nombre y not null
-            this.Property(unaLimitacion => unaLimitacion.FechaOcurrencia)
+            this.Property(unaLimitacion => unaLimitacion.FecOcurrencia)
                     .HasColumnName("fechaOperacion")
                     .IsOptional();
 
             //conf. propiedad fecha recuperacion: nombre y not null
-            this.Property(unaLimitacion => unaLimitacion.FechaRecuperacion)
+            this.Property(unaLimitacion => unaLimitacion.FecRecuperacion)
                     .HasColumnName("fechaRecuperacion")
                     .IsOptional();
         }

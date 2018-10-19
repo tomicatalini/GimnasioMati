@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
+using DomainLayer;
 
 namespace DataLayer.Mapping
 {
-    class TipoProductoMap : EntityTypeConfiguration<TipoProductoDTO>
+    class TipoProductoMap : EntityTypeConfiguration<TipoProducto>
     {
         public TipoProductoMap()
         {
@@ -25,7 +26,7 @@ namespace DataLayer.Mapping
             //relacion de muchos a uno con producto
             this.HasMany(unTipo => unTipo.Productos)
                 .WithRequired(unProducto => unProducto.TipoProducto)
-                    .HasForeignKey(unProducto => unProducto.TipoId);
+                    .HasForeignKey(unProducto => unProducto.TipoProductoId);
         }
     }
 }

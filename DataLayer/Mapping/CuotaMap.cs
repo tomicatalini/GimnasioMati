@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
+using DomainLayer;
 
 namespace DataLayer.Mapping
 {
-    class CuotaMap : EntityTypeConfiguration<CuotaDTO>
+    class CuotaMap : EntityTypeConfiguration<Cuota>
     {
         public CuotaMap()
         {
@@ -11,14 +12,14 @@ namespace DataLayer.Mapping
             this.ToTable("Cuota");
 
             //Conf. clave primaria: nombre, auto increment y not null
-            this.HasKey<int>(unaCuota => unaCuota.NroCuota)
+            this.HasKey<long>(unaCuota => unaCuota.NroCuota)
                 .Property(unaCuota => unaCuota.NroCuota)
                     .HasColumnName("nroCouta")
                     .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                     .IsRequired();
 
             //Conf. propiedad fechaEmision: nombre y not null
-            this.Property(unaCuota => unaCuota.FechaEmision)
+            this.Property(unaCuota => unaCuota.FecEmision)
                     .HasColumnName("fechaEmision")
                     .IsRequired();
 
@@ -48,7 +49,7 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //relacion de uno a muchos con pago
-            this.HasMany<PagoDTO>(unaCuota => unaCuota.Pagos)
+            this.HasMany<Pago>(unaCuota => unaCuota.Pagos)
                 .WithRequired(unPago => unPago.Cuota)
                     .HasForeignKey(unPago => unPago.NroCuota);
 

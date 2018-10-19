@@ -52,14 +52,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActividadFisica.cs" />
+    <Compile Include="ContactoEmergencia.cs" />
     <Compile Include="Cuota.cs" />
     <Compile Include="DetalleRutina.cs" />
     <Compile Include="Ejercicio.cs" />
     <Compile Include="Enfermedad.cs" />
+    <Compile Include="FichaMedica.cs" />
     <Compile Include="GastoAdministrativo.cs" />
-    <Compile Include="HistorialMedico.cs" />
     <Compile Include="LimitacionFisica.cs" />
+    <Compile Include="LineaEjercicio.cs" />
     <Compile Include="LineaMovimiento.cs" />
+    <Compile Include="Marca.cs" />
     <Compile Include="Medicacion.cs" />
     <Compile Include="Mes.cs" />
     <Compile Include="Movimiento.cs" />

@@ -14,6 +14,7 @@ namespace DataLayer.DataBase
     public class UnitOfWork: IUnitOfWork
     {
         private readonly GymMatiContext iDbContext;
+
         public UnitOfWork(GymMatiContext pContext)
         {
             if (pContext == null)
@@ -22,14 +23,19 @@ namespace DataLayer.DataBase
             }
 
             this.iDbContext = pContext;
+
             this.SocioRepository = new SocioRepository(this.iDbContext);
             this.CuotaRepository = new CuotaRepository(this.iDbContext);
-            this.PagoRepository = new PagoRepository(this.iDbContext);
+            this.EjercicioRepository = new EjercicioRepository(this.iDbContext);
+            this.MusculoRepository = new MusculoRepository(this.iDbContext);
+            //this.PagoRepository = new PagoRepository(this.iDbContext);
             this.RutinaRepository = new RutinaRepository(this.iDbContext);
-            this.MovimientoRepository = new MovimientoRepository(this.iDbContext);
-            this.GastoAdministrativoRepository = new GastoAdministrativoRepository(this.iDbContext);
+            //this.MovimientoRepository = new MovimientoRepository(this.iDbContext);
+            //this.GastoAdministrativoRepository = new GastoAdministrativoRepository(this.iDbContext);
             this.ProductoRepository = new ProductoRepository(this.iDbContext);
-            this.HistorialMedicoRepository = new HistorialMedicoRepository(this.iDbContext);
+            //this.HistorialMedicoRepository = new HistorialMedicoRepository(this.iDbContext);
+            //this.MarcaRepository = new MarcaRepository(this.iDbContext);
+            this.TipoProductoRepository = new TipoProductoRepository(this.iDbContext);
         }
 
         public ISocioRepository SocioRepository
@@ -42,35 +48,37 @@ namespace DataLayer.DataBase
             get; private set;
         }
 
-        public IPagoRepository PagoRepository
-        {
-            get; private set;
-        }
+        public IEjercicioRepository EjercicioRepository { get; private set; }
+        public IMusculoRepository MusculoRepository { get; private set; }
+        //public IPagoRepository PagoRepository
+        //{
+        //    get; private set;
+        //}
 
-        public IRutinaRepository RutinaRepository
-        {
-            get; private set;
-        }
+        public IRutinaRepository RutinaRepository{ get; private set; }
 
-        public IMovimientoRepository MovimientoRepository
-        {
-            get; private set;
-        }
+        //public IMovimientoRepository MovimientoRepository
+        //{
+        //    get; private set;
+        //}
 
-        public IGastoAdministrativoRepository GastoAdministrativoRepository
-        {
-            get; private set;
-        }
+        //public IGastoAdministrativoRepository GastoAdministrativoRepository
+        //{
+        //    get; private set;
+        //}
 
         public IProductoRepository ProductoRepository
         {
             get; private set;
         }
 
-        public IHistorialMedicoRepository HistorialMedicoRepository
-        {
-            get; private set;
-        }
+        //public IMarcaRepository MarcaRepository { get; private set; }
+        public ITipoProductoRepository TipoProductoRepository { get; private set; }
+
+        //public IHistorialMedicoRepository HistorialMedicoRepository
+        //{
+        //    get; private set;
+        //}
 
         public void Complete()
         {

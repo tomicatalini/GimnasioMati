@@ -5,10 +5,14 @@ namespace DomainLayer
 {
     public class LineaMovimiento
     {
-        public int cantidad { get; set; }
-        public float precioUnitario { get; set; }
+        public int Id { get; set; }
+        public int Cantidad { get; set; }
+        public float PrecioUnitario { get; set; }
         
-        public Movimiento unMovimiento { get; set; }
-        public Producto unProducto { get; set; }
+        public virtual int MovimientoId { get; set; }
+        public virtual Movimiento Movimiento { get; set; }
+
+        public virtual int CodProducto { get; set; }
+        public virtual Producto Producto { get; set; }
     }
 }

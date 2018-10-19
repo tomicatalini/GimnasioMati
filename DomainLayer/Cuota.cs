@@ -8,15 +8,53 @@ namespace DomainLayer
 {
     public class Cuota
     {
-        public long nroCuta { get; set; }
-        public DateTime fecEmision { get; set; }
-        public string descripcion { get; set; }
-        public float monto { get; set; }
-        public bool pagada { get; set; }
-        Mes mes { get; set; }
-        public int año { get; set; }
+        public int NroCuota { get; set; }
+        public DateTime FecEmision { get; set; }
+        public string Descripcion { get; set; }
+        public float Monto { get; set; }
+        public bool Pagada { get; set; }
+        //public Mes Mes { get; set; }
+        public string Mes { get; set; }
+        public int Año { get; set; }
 
-        public Socio unSocio { get; set; }
-        public IList<Pago> Pagos { get; set; }
+        public virtual int SocioDNI { get; set; }
+        public virtual Socio Socio { get; set; }
+        public virtual IList<Pago> Pagos { get; set; }
+
+        public Cuota(DateTime pFecEmision, string pDescripcion, float pMonto, string pMes, int pAño, Socio unSocio)
+        {
+                      
+            NroCuota = 1;
+            FecEmision = pFecEmision;
+            Descripcion = pDescripcion;
+            Monto = pMonto;
+            Mes = pMes;
+            Año = pAño;
+
+            SocioDNI = unSocio.DNI;
+            Socio = unSocio;
+
+            Pagos = new List<Pago>();
+        }
+
+        public void Cancelada()
+        {
+            float montoPagos = 0;
+
+            foreach (var unPago in this.Pagos)
+            {
+                montoPagos += unPago.Importe; 
+            }
+
+            if (montoPagos == this.Monto)
+            {
+                this.Pagada = true;
+            }
+            else
+            {
+                this.Pagada = false;
+            }
+            
+        }
     }
 }

@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
+using DomainLayer;
 
 namespace DataLayer.Mapping
 {
-    class MovimientoMap : EntityTypeConfiguration<MovimientoDTO>
+    class MovimientoMap : EntityTypeConfiguration<Movimiento>
     {
         public MovimientoMap()
         {

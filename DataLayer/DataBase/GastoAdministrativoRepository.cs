@@ -10,11 +10,11 @@ namespace DataLayer.DataBase
     /// <summary>
     /// Repositorio de entidad GastoAdministrativo
     /// </summary>
-    public class GastoAdministrativoRepository: Repository<GastoAdministrativo, GymMatiContext>, IGastoAdministrativoRepository
+    public class GastoAdministrativoRepository //: Repository<GastoAdministrativo, GymMatiContext>, IGastoAdministrativoRepository
     {
-        public GastoAdministrativoRepository(GymMatiContext pContext) : base (pContext)
-        {
+        //public GastoAdministrativoRepository(GymMatiContext pContext) : base (pContext)
+        //{
 
-        }
+        //}
     }
 }

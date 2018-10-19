@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DataLayer;
 using DataLayer.DataBase;
+using DomainLayer;
 
 namespace BusinessLayer.Controladores
 {
@@ -25,18 +26,41 @@ namespace BusinessLayer.Controladores
         /// </summary>
         /// <param name="pDni"></param>
         /// <returns> un socio </returns>
-        public SocioDTO BuscarSocio(int pDni)
+        public Socio GetSocioByDni(int pDni)
         {
-            if (!this.iUnitOfWork.SocioRepository.Exist(pDni))
-                throw new KeyNotFoundException("El socio ingresado no existe");
-
             var unSocio = this.iUnitOfWork.SocioRepository.Get(pDni);
 
-            //Verifica si el socio ya existe, pero se encuentra en estado de Baja.
-            if (this.EstadoSocio(pDni) == false)
-                throw new Exception("El socio esta en estado de Baja");
-
+            //Verifica la existencia del socio.
+            //if (unSocio is null)
+            //    throw new NullReferenceException("El socio ingresado no existe");
+            
             return unSocio;           
+        }
+
+        public Socio GetSocioByNroSocio(int codigo)
+        {
+            var unSocio = this.iUnitOfWork.SocioRepository.Get(codigo);
+
+            //Verifica la existencia del socio.
+            //if (unSocio is null)
+            //    throw new NullReferenceException("El socio ingresado no existe");
+
+            return unSocio;
+        }
+
+        /// <summary>
+        /// Devuelve los socios donde su apellido contenga la cadena pasada como parametro.
+        /// </summary>
+        /// <param name="pApellido"></param>
+        /// <returns></returns>
+        public IList<Socio> GetSociosByApellido(string pApellido)
+        {
+            return this.iUnitOfWork.SocioRepository.GetSociosByString(pApellido);
+        }
+
+        public IList<Cuota> GetCuotasSocio(int dniSocio)
+        {
+            return this.GetSocioByDni(dniSocio).Cuotas;
         }
 
         /// <summary>
@@ -49,28 +73,12 @@ namespace BusinessLayer.Controladores
         /// <param name="pDomicilio"></param>
         /// <param name="pTelefono"></param>
         /// <param name="pMail"></param>
-        public void AltaSocio(int pDni, string pNombre, string pApellido, DateTime pFechaNacimiento, string pDomicilio, int pTelefono, string pMail)
+        public void AltaSocio(int pDni, string pNombre, string pApellido, DateTime pFechaNacimiento, string pDomicilio, long pTelefono, string pMail)
         {
-            var unSocio = this.iUnitOfWork.SocioRepository.Get(pDni);
 
-            //Verifica si el socio ya existe, pero se encuentra en estado de Baja.
-            if (this.EstadoSocio(pDni) == false)
-                throw new Exception("El socio esta en estado de Baja");
-
-            SocioDTO otroSocio = new SocioDTO()
-            {
-                DNI = pDni,
-                Nombre = pNombre,
-                Apellido = pApellido,
-                FechaNac = pFechaNacimiento,
-                Domicilio = pDomicilio,
-                Telefono = pTelefono,
-                Mail = pMail,
-                Activo = true
-            };
+            Socio unSocio = new Socio(pDni, pNombre, pApellido, pFechaNacimiento, pDomicilio, pTelefono, pMail);
             
-            this.iUnitOfWork.SocioRepository.Add(otroSocio);
-
+            this.iUnitOfWork.SocioRepository.Add(unSocio);
         }
 
         /// <summary>
@@ -79,10 +87,8 @@ namespace BusinessLayer.Controladores
         /// <param name="dni"></param>
         public void BajaSocio(int pDni)
         {
-            if (!this.iUnitOfWork.SocioRepository.Exist(pDni))
-                throw new KeyNotFoundException("El socio ingresado no existe");
+            var unSocio = this.GetSocioByDni(pDni);            
             
-            SocioDTO unSocio = this.BuscarSocio(pDni);
             unSocio.Activo = false;
         }
 
@@ -96,34 +102,39 @@ namespace BusinessLayer.Controladores
         /// <param name="pDomicilio"></param>
         /// <param name="pTelefono"></param>
         /// <param name="pMail"></param>
-        public void modificarSocio(int pDni, string pNombre, string pApellido, DateTime pFechaNacimiento, string pDomicilio, int pTelefono, string pMail)
+        public void ModificarSocio(int pDni, string pNombre, string pApellido, DateTime pFechaNacimiento, string pDomicilio, long pTelefono, string pMail)
         {
-
-            if (!this.iUnitOfWork.SocioRepository.Exist(pDni))
-                throw new KeyNotFoundException("El socio ingresado no existe");
-
             //Se obtiene la referencia del socio que se quiere cambiar
-            var unSocio =this.iUnitOfWork.SocioRepository.Get(pDni);
+            var unSocio = this.GetSocioByDni(pDni);
 
             //Se realizan las modificaciones
             unSocio.Nombre = pNombre;
             unSocio.Apellido = pApellido;
-            unSocio.FechaNac = pFechaNacimiento;
+            unSocio.FecNacimiento = pFechaNacimiento;
             unSocio.Domicilio = pDomicilio;
             unSocio.Telefono = pTelefono;
             unSocio.Mail = pMail;
+            
+            //Para el caso de "Dar de alta" un socio en estado inactivo
+            //unSocio.Activo = pActivo;
         }
 
         /// <summary>
-        /// Determina si un socio esta activo o no.
+        /// Realiza un commit a la bd.
+        /// </summary>
+        public void GuardarCambios()
+        {
+            this.iUnitOfWork.Complete();
+        }
+
+        /// <summary>
+        /// Cambia el estadod de un socio inactivo
         /// </summary>
         /// <param name="pDni"></param>
-        /// <returns></returns>
-        public bool EstadoSocio(int pDni)
+        public void AltaSocioBaja(int pDni)
         {
-            var unSocio = this.iUnitOfWork.SocioRepository.Get(pDni);
-
-            return unSocio.Activo;
+            var unSocio = this.GetSocioByDni(pDni);
+            unSocio.Activo = true;
         }
     }
 

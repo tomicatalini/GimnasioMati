@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
+using DomainLayer;
 
 namespace DataLayer.Mapping
 {
-    class ProductoMap : EntityTypeConfiguration<ProductoDTO>
+    class ProductoMap : EntityTypeConfiguration<Producto>
     {
         public ProductoMap()
         {
@@ -15,6 +16,16 @@ namespace DataLayer.Mapping
                 .Property(unMovimiento => unMovimiento.CodProducto)
                     .HasColumnName("codProducto")
                     .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
+                    .IsRequired();
+
+            //conf. propiedad nombre: nombre y not null
+            this.Property(unProducto => unProducto.Marca)
+                    .HasColumnName("marca")
+                    .IsRequired();
+
+            //conf. propiedad nombre: nombre y not null
+            this.Property(unProducto => unProducto.Contenido)
+                    .HasColumnName("contenido")
                     .IsRequired();
 
             //conf. propiedad nombre: nombre y not null

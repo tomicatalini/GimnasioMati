@@ -1,8 +1,9 @@
-﻿using System.Data.Entity.ModelConfiguration; 
+﻿using System.Data.Entity.ModelConfiguration;
+using DomainLayer;
 
 namespace DataLayer.Mapping
 {
-    class PagoMap : EntityTypeConfiguration<PagoDTO>
+    class PagoMap : EntityTypeConfiguration<Pago>
     {
         public PagoMap()
         {
@@ -17,7 +18,7 @@ namespace DataLayer.Mapping
                     .IsRequired();
 
             //conf. propiedad fechaPago: nombre y not null
-            this.Property(unPago => unPago.FechaPago)
+            this.Property(unPago => unPago.FecPago)
                     .HasColumnName("fechaPago")
                     .IsRequired();
 

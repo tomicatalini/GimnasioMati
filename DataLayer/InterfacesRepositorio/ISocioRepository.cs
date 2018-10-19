@@ -12,8 +12,9 @@ namespace DataLayer.DataBase
     /// <summary>
     /// Repositorio generico para el acceso a los Socios.
     /// </summary>
-    public interface ISocioRepository: IRepository<SocioDTO>
+    public interface ISocioRepository: IRepository<Socio>
     {
-        bool Exist(long pDni){ }
+        IList<Socio> GetSociosByString(string pCadena);
+        IList<Socio> GetSociosActivos();
     }
 }

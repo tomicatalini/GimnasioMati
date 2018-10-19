@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace DomainLayer
 {
-    enum Mes
+    public enum Mes
     {
-        Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic
+        Enero = 1 , Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviemrbe, Diciembre
     }
 }

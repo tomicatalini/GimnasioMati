@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="Controlador.cs" />
     <Compile Include="Controladores\ControladorCuota.cs" />
+    <Compile Include="Controladores\ControladorProducto.cs" />
+    <Compile Include="Controladores\ControladorRutina.cs" />
     <Compile Include="Controladores\ControladorSocio.cs" />
     <Compile Include="ISocioService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

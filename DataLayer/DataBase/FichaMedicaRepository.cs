@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DomainLayer;
+using DataLayer.InterfacesRepositorio;
 
 namespace DataLayer.DataBase
 {   
     /// <summary>
     /// Repositorio de entidad HistorialMedico
     /// </summary>
-    public class HistorialMedicoRepository //: Repository<HistorialMedico, GymMatiContext>, IHistorialMedicoRepository
+    public class FichaMedicaRepository : Repository<FichaMedica, GymMatiContext>, IFichaMedicaRepository
     {
         //public HistorialMedicoRepository(GymMatiContext pContext) : base (pContext)
         //{

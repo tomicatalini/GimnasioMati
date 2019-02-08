@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataBase\CuotaRepository.cs" />
+    <Compile Include="DataBase\DetalleRutinaRepository.cs" />
     <Compile Include="DataBase\EjercicioRepository.cs" />
     <Compile Include="DataBase\MusculoRepository.cs" />
     <Compile Include="DataBase\TipoProductoRepository.cs" />
@@ -68,7 +69,7 @@
     <Compile Include="DTO\ContactoEmergenciaDTO.cs" />
     <Compile Include="DTO\CuotaDTO.cs" />
     <Compile Include="DataBase\GastoAdministrativoRepository.cs" />
-    <Compile Include="DataBase\HistorialMedicoRepository.cs" />
+    <Compile Include="DataBase\FichaMedicaRepository.cs" />
     <Compile Include="DataBase\MovimientoRepository.cs" />
     <Compile Include="DataBase\PagoRepository.cs" />
     <Compile Include="DataBase\ProductoRepository.cs" />
@@ -76,10 +77,11 @@
     <Compile Include="DataBase\SocioRepository.cs" />
     <Compile Include="DataBase\UnitOfWork.cs" />
     <Compile Include="InterfacesRepositorio\ICuotaRepository.cs" />
+    <Compile Include="InterfacesRepositorio\IDetalleRutinaRepository.cs" />
     <Compile Include="InterfacesRepositorio\IEjercicioRepository.cs" />
     <Compile Include="InterfacesRepositorio\IGastoAdministrativoRepository.cs" />
     <Compile Include="DataBase\GymMatiContext.cs" />
-    <Compile Include="InterfacesRepositorio\IHistorialMedicoRepository.cs" />
+    <Compile Include="InterfacesRepositorio\IFichaMedicaRepository.cs" />
     <Compile Include="InterfacesRepositorio\IMovimientoRepository.cs" />
     <Compile Include="InterfacesRepositorio\IMusculoRepository.cs" />
     <Compile Include="InterfacesRepositorio\IPagoRepository.cs" />

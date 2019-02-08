@@ -11,7 +11,7 @@ namespace DataLayer.DataBase
     /// <summary>
     /// Repositorio generico para el acceso a los Historiales Medicos
     /// </summary>
-    public interface IHistorialMedicoRepository : IRepository<FichaMedica>
+    public interface IFichaMedicaRepository : IRepository<FichaMedica>
     {
         //agregar metodos de historial medico.
     }

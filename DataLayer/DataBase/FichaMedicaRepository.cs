@@ -13,9 +13,9 @@ namespace DataLayer.DataBase
     /// </summary>
     public class FichaMedicaRepository : Repository<FichaMedica, GymMatiContext>, IFichaMedicaRepository
     {
-        //public HistorialMedicoRepository(GymMatiContext pContext) : base (pContext)
-        //{
+        public FichaMedicaRepository(GymMatiContext pContext) : base (pContext)
+        {
 
-        //}
+        }
     }
 }

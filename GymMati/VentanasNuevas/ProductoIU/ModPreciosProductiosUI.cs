@@ -71,7 +71,7 @@ namespace GymMati.VentanasNuevas.ProductoIU
 
         }
 
-        private void listaProductos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void ListaProductos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
             if (lblPrueba.Text == "si")

@@ -29,19 +29,19 @@ namespace DataLayer.DataBase
         //public DbSet<PagoDTO> Pagos { get; set; }
 
         ////Repositorios Rutina
-        public DbSet<Rutina> Rutinas { get; set; }
-        //public DbSet<DetalleRutinaDTO> DetallesRutinas {get; set;}
-        //public DbSet<MusculoDTO> Musculos { get; set; }
-        //public DbSet<EjercicioDTO> Ejercios { get; set; }
+        public DbSet<RutinaDTO> Rutinas { get; set; }
+        public DbSet<DetalleRutinaDTO> DetallesRutinas {get; set;}
+        public DbSet<MusculoDTO> Musculos { get; set; }
+        public DbSet<EjercicioDTO> Ejercios { get; set; }
 
         ////Repositorios Ficha Medica
-        //public DbSet<FichaMedicaDTO> FichasMedicas { get; set; }
-        //public DbSet<ActividadFisicaDTO> ActividadesFisicas { get; set; }
-        //public DbSet<ContactoEmergenciaDTO> ContactosEmergencia { get; set; }
-        //public DbSet<EnfermedadDTO> Enfermedades {get; set;}
-        //public DbSet<LimitacionFisicaDTO> LimitacionesFisicas {get; set;}
-        //public DbSet<MedicacionDTO> Medicamentos {get; set;}
-        //public DbSet<OperacionDTO> Operaciones {get; set;}
+        public DbSet<FichaMedicaDTO> FichasMedicas { get; set; }
+        public DbSet<ActividadFisicaDTO> ActividadesFisicas { get; set; }
+        public DbSet<ContactoEmergenciaDTO> ContactosEmergencia { get; set; }
+        public DbSet<EnfermedadDTO> Enfermedades {get; set;}
+        public DbSet<LimitacionFisicaDTO> LimitacionesFisicas {get; set;}
+        public DbSet<MedicacionDTO> Medicamentos {get; set;}
+        public DbSet<OperacionDTO> Operaciones {get; set;}
 
         ////Repositorios Movimiento
         //public DbSet<MovimientoDTO> Movimientos { get; set; }
@@ -78,7 +78,7 @@ namespace DataLayer.DataBase
             pModelBuilder.Configurations.Add(new MedicacionMap());
             pModelBuilder.Configurations.Add(new OperacionMap());
 
-            ////Modulo movimiento            
+            ////Modulo Movimiento            
             pModelBuilder.Configurations.Add(new MovimientoMap());
             pModelBuilder.Configurations.Add(new LineaMovimientoMap());
             pModelBuilder.Configurations.Add(new ProductoMap());

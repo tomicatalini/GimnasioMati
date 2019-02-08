@@ -103,7 +103,7 @@
             this.listaProductos.Size = new System.Drawing.Size(585, 303);
             this.listaProductos.TabIndex = 3;
             this.listaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListaProductos_CellContentClick);
-            this.listaProductos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaProductos_CellValueChanged);
+            this.listaProductos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListaProductos_CellValueChanged);
             // 
             // codProductoDataGridViewTextBoxColumn
             // 

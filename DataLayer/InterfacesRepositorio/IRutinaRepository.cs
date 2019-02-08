@@ -14,6 +14,6 @@ namespace DataLayer.DataBase
     public interface IRutinaRepository: IRepository<Rutina>
     {
         //agregar metodos de rutina.
-        IList<Rutina> GetByNombre(string cadena);
+        //IList<Rutina> GetByNombre(string cadena);
     }
 }

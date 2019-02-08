@@ -18,6 +18,7 @@ namespace DomainLayer
 
         public Rutina(string nombre, int duracion, DateTime fechaIncio)
         {
+            this.Id = 1;
             this.CantDias = duracion;
             this.FecInicio = fechaIncio;
             this.Nombre = nombre;
